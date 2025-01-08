@@ -6,6 +6,7 @@
     <meta name="description" content="Test-time Scaling for Computer Vision Workshop at CVPR2025">
     <title>Test-time Scaling for Computer Vision (ViSCALE) Workshop - CVPR2025</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <header>
@@ -77,7 +78,10 @@
     </section>
 
     <section id="schedule" class="section">
-        <div class="container">
+        <div id="schedule-section">
+            <!-- The schedule content will be inserted here dynamically -->
+        </div>
+        <!-- <div class="container">
             <h2>Schedule</h2>
             <p>The detailed workshop schedule will be available closer to the event. Below is a general overview:</p>
             <ul>
@@ -90,7 +94,7 @@
                 <li><strong>16:00 - 18:00:</strong> Paper Presentations - Session 2</li>
                 <li><strong>18:00 - 18:30:</strong> Closing Remarks</li>
             </ul>
-        </div>
+        </div> -->
     </section>
 
     <section id="committee" class="section">
@@ -99,12 +103,12 @@
             <h3>Organizing Committee</h3>
             <ul class="committee-list">
                 <li>
-                    <img src="profile1.jpg" alt="Committee Member 1" class="profile-img">
-                    <strong>Prof. [Your Name]</strong> - University of Sydney
+                    <img src="resources/committee/yinpeng.jpeg" alt="Committee Member 1" class="profile-img">
+                    <strong>Yinpeng Dong</strong> - Tsinghua University
                 </li>
                 <li>
-                    <img src="profile2.jpg" alt="Committee Member 2" class="profile-img">
-                    <strong>Dr. [Co-chair Name]</strong> - [Affiliation]
+                    <img src="resources/committee/yichi-zhang.jpg" alt="Committee Member 2" class="profile-img">
+                    <strong>Yichi Zhang</strong> - University of Sydney
                 </li>
                 <li>
                     <img src="profile3.jpg" alt="Committee Member 3" class="profile-img">
@@ -139,4 +143,20 @@
         </div>
     </footer>
 </body>
+
 </html>
+
+<script>
+function loadSchedule() {
+    fetch('schedule.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('schedule-section').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Error loading schedule.html:', error);
+    });
+}
+
+window.onload = loadSchedule;
+</script>

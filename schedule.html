@@ -1,0 +1,75 @@
+
+
+<div class="container">
+    <h1>Workshop Schedule: Test-time Scaling for Computer Vision</h1>
+
+    <!-- Timezone selection -->
+    <div>
+        <label for="timezone" style="color: #fff;">Select Time Zone:</label>
+        <select id="timezone" class="timezone-select" onchange="updateSchedule()">
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">New York (EST)</option>
+            <option value="Europe/London">London (GMT)</option>
+            <option value="Asia/Tokyo">Tokyo (JST)</option>
+            <option value="Australia/Sydney">Sydney (AEST)</option>
+        </select>
+    </div>
+
+    <!-- Schedule Table -->
+    <table id="schedule">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Introduction & Keynote</td>
+                <td id="time1">09:00 AM</td>
+            </tr>
+            <tr>
+                <td>Session 1: Test-time Scaling Algorithms</td>
+                <td id="time2">11:00 AM</td>
+            </tr>
+            <tr>
+                <td>Session 2: Multimodal Models and Safety</td>
+                <td id="time3">01:00 PM</td>
+            </tr>
+            <tr>
+                <td>Panel Discussion</td>
+                <td id="time4">03:00 PM</td>
+            </tr>
+            <tr>
+                <td>Networking & Closing</td>
+                <td id="time5">04:30 PM</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // List of events with their UTC times
+    const events = [
+        { name: 'Introduction & Keynote', timeUTC: '2025-03-01T09:00:00Z' },
+        { name: 'Session 1: Test-time Scaling Algorithms', timeUTC: '2025-03-01T11:00:00Z' },
+        { name: 'Session 2: Multimodal Models and Safety', timeUTC: '2025-03-01T13:00:00Z' },
+        { name: 'Panel Discussion', timeUTC: '2025-03-01T15:00:00Z' },
+        { name: 'Networking & Closing', timeUTC: '2025-03-01T16:30:00Z' }
+    ];
+
+    // Function to convert UTC to selected time zone and update the schedule
+    function updateSchedule() {
+        const timezone = document.getElementById('timezone').value;
+        const dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+
+        events.forEach((event, index) => {
+            const eventDate = new Date(event.timeUTC);
+            const timeInZone = eventDate.toLocaleTimeString('en-US', { timeZone: timezone, ...dateOptions });
+            document.getElementById(`time${index + 1}`).textContent = timeInZone;
+        });
+    }
+
+    // Initialize the schedule with the default time zone (UTC)
+    updateSchedule();
+</script>
