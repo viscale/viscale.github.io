@@ -177,6 +177,7 @@ const events = [
 // Function to convert UTC to selected time zone and update the schedule
 function updateSchedule() {
     const timezone = document.getElementById('timezone').value;
+    console.log(timezone)
     const dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
 
     events.forEach((event, index) => {
