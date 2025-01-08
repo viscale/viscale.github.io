@@ -101,7 +101,7 @@ header p {
 }
 
 .cover-text p {
-    padding-top: 10px;
+    padding-top: 3vh;
     font-size: clamp(1rem, 2vw, 3rem); /* Subtitle font size */
     color: #ffd700;
     font-weight: bold;
