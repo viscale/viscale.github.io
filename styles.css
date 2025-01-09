@@ -37,12 +37,18 @@ header p {
 
 /* Navbar */
 .navbar {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     background-color: rgba(51, 51, 51, 0.5); /* Half-transparent background */
     z-index: 10;
     padding: 10px 0;
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for better visuals */
+}
+
+.navbar.sticky {
+    position: fixed; /* Keep navbar fixed at the top */
+    top: 0;
 }
 
 .navbar ul {
@@ -100,7 +106,7 @@ header p {
 }
 
 .cover-text h1 {
-    font-size: clamp(2rem, 7vw, 4rem); /* Responsive font size */
+    font-size: 6rem; /* Responsive font size */
     margin: 0;
     word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
     white-space: normal; /* Allow text to break into multiple lines */
@@ -108,20 +114,22 @@ header p {
 }
 
 .cover-text p {
-    padding-top: (1ex, 5vh, 8ex);
-    font-size: clamp(1rem, 2vw, 3rem); /* Subtitle font size */
-    color: #ffd700;
+    padding-top: clamp(1rem,5vh, 10rem);
+    font-size: 1.8rem; /* Subtitle font size */
+    color: #ffd900bf;
     font-weight: bold;
 }
 
 /* Section styles */
 .section {
     padding: 40px 0;
+    font-size: 20px;
 }
 
 .section h1 {
     text-align: center;
     padding-bottom: 2%;
+    font-size: 50px;
 }
 
 .section h3 {
