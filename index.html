@@ -20,7 +20,6 @@
     <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container">
-            <span class="menu-toggle">☰</span> <!-- Toggle button for mobile -->
             <ul>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#important-dates">Important Dates</a></li>
@@ -214,19 +213,5 @@ function updateSchedule() {
 
 // Initialize the schedule with the default time zone (UTC)
 updateSchedule();
-
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbarUl = document.querySelector('.navbar ul');
-
-    // Add click event listener to toggle button
-    menuToggle.addEventListener('click', () => {
-        if (navbarUl.classList.contains('show')) {
-            navbarUl.classList.remove('show'); // Hide the dropdown
-        } else {
-            navbarUl.classList.add('show'); // Show the dropdown
-        }
-    });
-});
 
 </script>

@@ -74,54 +74,6 @@ header p {
     color: #ffd700;
 }
 
-/* Mobile dropdown menu */
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Hide menu items initially */
-        flex-direction: column; /* Vertical layout for dropdown */
-        background-color: rgba(51, 51, 51, 0.9); /* Slightly opaque for dropdown */
-        position: absolute;
-        top: 100%; /* Position below the navbar */
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .navbar ul.show {
-        display: flex; /* Show the dropdown menu */
-    }
-
-    .navbar ul li {
-        margin: 5px 0; /* Add spacing between items in dropdown */
-    }
-
-    .navbar ul li a {
-        font-size: 1rem; /* Slightly larger text for readability */
-    }
-
-    .navbar .menu-toggle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(51, 51, 51, 0.5);
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 10px;
-        margin-left: auto;
-    }
-}
-
-/* Hide toggle button on larger screens */
-@media (min-width: 769px) {
-    .navbar .menu-toggle {
-        display: none;
-    }
-
-    .navbar ul {
-        display: flex; /* Ensure navbar items are visible */
-    }
-}
 
 
 /* Cover section */
@@ -156,7 +108,7 @@ header p {
 }
 
 .cover-text p {
-    padding-top: (1ex, 5vh, 3ex);
+    padding-top: (1ex, 5vh, 8ex);
     font-size: clamp(1rem, 2vw, 3rem); /* Subtitle font size */
     color: #ffd700;
     font-weight: bold;
