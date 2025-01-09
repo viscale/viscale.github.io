@@ -35,6 +35,7 @@ header p {
     color: #ccc;
 }
 
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -117,6 +118,7 @@ header p {
     object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
+
 .cover-text {
     position: absolute;
     top: 50%;
@@ -135,7 +137,7 @@ header p {
 }
 
 .cover-text p {
-    padding-top: clamp(1rem,5vh, 10rem);
+    padding-top: clamp(1rem,4vh, 7em);
     font-size: clamp(0.8rem, 1vw, 1.8rem); /* Subtitle font size */
     color: #ffd900bf;
     font-weight: bold;
@@ -197,6 +199,7 @@ select {
 }
 
 /* Committee section */
+
 .committee-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -227,54 +230,14 @@ select {
     .committee-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
     }
-
-    .navbar .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar ul li {
-        width: 100%;
-        text-align: left;
-        padding: 10px 0;
-    }
-
-    .cover-text h1 {
-        font-size: clamp(1.2rem, 5vw, 4rem);
-    }
-
-    .cover-text p {
-        font-size: clamp(1rem, 2vw, 1.5rem);
-    }
 }
 
 @media (max-width: 480px) {
     .committee-grid {
         grid-template-columns: 1fr; /* 1 column on small screens */
     }
-
-    .navbar ul li {
-        text-align: center;
-    }
-
-    .cover-text {
-        left: 10px;
-    }
-
-    .cover-text h1 {
-        font-size: clamp(1.5rem, 4vw, 3.5rem);
-    }
-
-    .cover-text p {
-        font-size: clamp(0.8rem, 3vw, 1.2rem);
-    }
 }
+
 
 /* Footer */
 footer {
