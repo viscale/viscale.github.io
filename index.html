@@ -6,6 +6,8 @@
     <meta name="description" content="Test-time Scaling for Computer Vision Workshop at CVPR2025">
     <title>Test-time Scaling for Computer Vision (ViSCALE) Workshop - CVPR2025</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="resources/favicon-black.png" type="image/png">
 </head>
 <body>
@@ -25,15 +27,31 @@
                 <h3 class="title">CVPR2025 ViSCALE Workshop</h3>
             </div>
 
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#important-dates">Important Dates</a></li>
-                <li><a href="#cfp">Call for Papers</a></li>
-                <li><a href="#speaker">Speakers</a></li>
-                <li><a href="#committee">Organizers</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="navlist">
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#important-dates">Important Dates</a></li>
+                    <li><a href="#cfp">Call for Papers</a></li>
+                    <li><a href="#speaker">Speakers</a></li>
+                    <li><a href="#committee">Organizers</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#important-dates">Important Dates</a></li>
+                    <li><a href="#cfp">Call for Papers</a></li>
+                    <li><a href="#speaker">Speakers</a></li>
+                    <li><a href="#committee">Organizers</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </div>
+              </div>
+
         </div>
     </nav>
 
@@ -220,6 +238,24 @@ function updateSchedule() {
 // Initialize the schedule with the default time zone (UTC)
 updateSchedule();
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 </script>
