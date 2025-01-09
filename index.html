@@ -42,13 +42,13 @@
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
                 <div id="myDropdown" class="dropdown-content">
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#important-dates">Important Dates</a></li>
-                    <li><a href="#cfp">Call for Papers</a></li>
-                    <li><a href="#speaker">Speakers</a></li>
-                    <li><a href="#committee">Organizers</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#introduction" onclick="Close()">Introduction</a></li>
+                    <li><a href="#important-dates" onclick="Close()">Important Dates</a></li>
+                    <li><a href="#cfp" onclick="Close()">Call for Papers</a></li>
+                    <li><a href="#speaker" onclick="Close()">Speakers</a></li>
+                    <li><a href="#committee" onclick="Close()">Organizers</a></li>
+                    <li><a href="#schedule" onclick="Close()">Schedule</a></li>
+                    <li><a href="#contact" onclick="Close()">Contact</a></li>
                 </div>
               </div>
 
@@ -242,6 +242,17 @@ updateSchedule();
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function Close() {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
 }
 
 // Close the dropdown menu if the user clicks outside of it
