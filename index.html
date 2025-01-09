@@ -37,7 +37,7 @@
     <section class="cover">
         <img src="resources/cover.png" alt="Cover Image" class="cover-image">
         <div class="cover-text">
-            <h1>Test-time Scaling for Computer Vision</h1>
+            <h1>Test-time Scaling <br> for Computer Vision</h1>
             <p>ViSCALE @ CVPR2025</p>
         </div>
     </section>
@@ -219,8 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarUl = document.querySelector('.navbar ul');
 
+    // Add click event listener to toggle button
     menuToggle.addEventListener('click', () => {
-        navbarUl.classList.toggle('show');
+        if (navbarUl.classList.contains('show')) {
+            navbarUl.classList.remove('show'); // Hide the dropdown
+        } else {
+            navbarUl.classList.add('show'); // Show the dropdown
+        }
     });
 });
 
