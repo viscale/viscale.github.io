@@ -38,7 +38,7 @@ header p {
 
 /* Navbar */
 .navbar {
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     background-color: rgba(51, 51, 51, 0.5); /* Half-transparent background */
