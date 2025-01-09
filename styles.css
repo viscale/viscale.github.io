@@ -35,6 +35,7 @@ header p {
     color: #ccc;
 }
 
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -46,9 +47,33 @@ header p {
     backdrop-filter: blur(5px); /* Optional: Adds a blur effect for better visuals */
 }
 
-.navbar.sticky {
-    position: fixed; /* Keep navbar fixed at the top */
-    top: 0;
+/* Flex container for logo, title, and navbar links */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logo and Title Section */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the logo and the title */
+}
+
+.logo {
+    width: 50px; /* Adjust logo size */
+    height: auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0; /* Remove default margin */
 }
 
 .navbar ul {
