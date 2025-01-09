@@ -124,14 +124,14 @@ header p {
 .cover-text {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 30px;
     transform: translateY(-50%); /* Vertically center the text */
     color: #fff;
     max-width: 90%; /* Ensure title has enough space to wrap into two lines */
 }
 
 .cover-text h1 {
-    font-size: 6rem; /* Responsive font size */
+    font-size: 5.5rem; /* Responsive font size */
     margin: 0;
     word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
     white-space: normal; /* Allow text to break into multiple lines */
