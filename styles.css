@@ -198,7 +198,7 @@ header p {
 }
 
 .cover-text h1 {
-    font-size: clamp(12px, 4rem, 96px); /* Responsive font size */
+    font-size: 4rem; /* Responsive font size */
     margin: 0;
     word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
     white-space: normal; /* Allow text to break into multiple lines */
@@ -390,6 +390,16 @@ select {
 
 /* Responsive design for smaller devices */
 @media (max-width: 768px) {
+    
+    .cover-text h1 {
+        font-size: 3rem; /* Responsive font size */
+    }
+
+    .cover-text p {
+        font-size: 1rem; /* Responsive font size */
+    }
+    
+
     .committee-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
     }
@@ -398,6 +408,14 @@ select {
 @media (max-width: 480px) {
     .committee-grid {
         grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+
+    .cover-text h1 {
+        font-size: 2rem; /* Responsive font size */
+    }
+
+    .cover-text p {
+        font-size: 0.8rem; /* Responsive font size */
     }
 }
 
