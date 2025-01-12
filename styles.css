@@ -14,8 +14,8 @@ body {
 
 /* Container for content */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -52,7 +52,7 @@ header p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1500px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -213,51 +213,54 @@ header p {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding: 20px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 0;
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, #00ffcc, #ff00cc);
     z-index: 1;
-    transform: translateY(-50%);
     box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00cc;
+}
+
+.date {
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px #00ffe1ba;
+    text-align: center;
 }
 
 .timestamp {
     position: relative;
     z-index: 2;
-    background: transparent;
-    border: none;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(84, 235, 246, 0.73);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    text-align: center;
+    width: 1vh;
+    height: 1vh;
+    box-shadow: 0 0 15px rgba(84, 235, 246, 0.73), inset 0 0 10px #ff00cc;
+    margin: 0 10px;
 }
 
 .timestamp span {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 5px #00ffcc;
-    padding: 5px 15px;
-    border: 2px solid #00ffcc;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00cc;
 }
 
 .label {
     margin-top: 15px;
-    font-size: 14px;
-    color: #00ffcc;
+    font-size: 20px;
+    color: #00ffee;
     text-shadow: 0 0 5px #ff00cc;
     text-align: center;
 }
