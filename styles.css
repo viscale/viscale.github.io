@@ -198,7 +198,7 @@ header p {
 }
 
 .cover-text h1 {
-    font-size: 4rem; /* Responsive font size */
+    font-size: clamp(12px, 4rem, 96px); /* Responsive font size */
     margin: 0;
     word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
     white-space: normal; /* Allow text to break into multiple lines */
