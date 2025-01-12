@@ -396,6 +396,7 @@ select {
     }
 
     .cover-text p {
+        padding-top: 1rem;
         font-size: 1rem; /* Responsive font size */
     }
     
@@ -415,6 +416,7 @@ select {
     }
 
     .cover-text p {
+        padding-top: 0.8rem;
         font-size: 0.8rem; /* Responsive font size */
     }
 }
