@@ -13,6 +13,27 @@ body {
     line-height: 1.6;
 }
 
+a:link {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
 /* Container for content */
 .container {
     width: 80%;
@@ -205,6 +226,10 @@ header p {
 
 .section h3 {
     padding-bottom: 5%;
+}
+
+.section ul {
+    padding-left: 1rem;
 }
 
 
