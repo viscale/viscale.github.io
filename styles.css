@@ -81,13 +81,12 @@ header p {
     justify-content: flex-start; /* Items take space as needed */
     align-items: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Ensure no overflow */
+    margin: 0px;
+    padding: 0px;
 }
 
 .navbar ul li {
-    margin: 0 10px;
+    margin: 20px 10px;
 }
 
 .navbar ul li a {
