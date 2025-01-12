@@ -14,17 +14,17 @@ body {
 }
 
 a:link {
-color: #00d5ff;
+color: #00a0fc;
 background-color: transparent;
 text-decoration: none;
 }
 a:visited {
-color: #00d5ff;
+color: #00a0fc;
 background-color: transparent;
 text-decoration: none;
 }
 a:hover {
-color: #00d5ff;
+color: #00a0fc;
 background-color: transparent;
 text-decoration: underline;
 }
@@ -225,7 +225,8 @@ header p {
 }
 
 .section h3 {
-    padding-bottom: 5%;
+    font-size: 1.2rem;
+    padding-bottom: 1%;
 }
 
 .section ul {
