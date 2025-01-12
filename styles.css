@@ -14,25 +14,25 @@ body {
 }
 
 a:link {
-    color: #fff;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:visited {
-    color: #fff;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:hover {
-    color: blue;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  a:active {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
+color: #00d5ff;
+background-color: transparent;
+text-decoration: none;
+}
+a:visited {
+color: #00d5ff;
+background-color: transparent;
+text-decoration: none;
+}
+a:hover {
+color: #00d5ff;
+background-color: transparent;
+text-decoration: underline;
+}
+a:active {
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
 
 /* Container for content */
 .container {
@@ -364,6 +364,27 @@ select {
     object-fit: cover;
     margin-bottom: 0.5rem;
     max-width: 10rem;  /* Ensure a max size */
+}
+
+.committee-member a:link {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+.committee-member a:visited {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+.committee-member a:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.committee-member a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 /* Responsive design for smaller devices */
