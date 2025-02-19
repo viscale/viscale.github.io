@@ -36,7 +36,7 @@ text-decoration: underline;
 
 /* Container for content */
 .container {
-    width: 80%;
+    width: 85%;
     max-width: 1800px;
     margin: 0 auto;
 }
@@ -344,7 +344,7 @@ select {
 
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(5, 1fr); /* 4 columns */
     gap: 1rem; /* Space between grid items */
     text-align: center;
 }
