@@ -61,7 +61,7 @@
         <div class="cover-text">
             <p style="color:rgba(30, 221, 255, 0.744);">1st ViSCALE Workshop @ CVPR2025</p>
             <h1>Test-time Scaling <br> for Computer Vision</h1>
-            <p>June 11th-15th @ Nashville, US</p>
+            <p>June 12th AM @ Nashville, US</p>
         </div>
     </section>
 
@@ -111,7 +111,7 @@
                         <div class="label">Camera-Ready Submission</div>
                     </div>
                     <div class="step">
-                        <div class="date">TBD</div>
+                        <div class="date">June 12 AM, 2025</div>
                         <div class="timestamp">
                             <span></span>
                         </div>
@@ -124,7 +124,70 @@
     <section id="schedule" class="section">
 
         <div id="schedule-section">
-            <!-- The schedule content will be inserted here dynamically -->
+            <div class="container" style="width: 50%; justify-content: center; font-size: 2.5vh;">
+                <h1>Schedule</h1>
+            
+                <!-- Timezone selection -->
+                <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                    <label for="timezone" style="color: #fff;">Select Time Zone:</label>
+                    <select id="timezone" class="timezone-select" onchange="updateSchedule()">
+                        <option value="America/Chicago">Nashville (UTC-5)</option>
+                        <option value="Europe/London">London (UTC+1)</option>
+                        <option value="Europe/Rome">Rome (UTC+2)</option>
+                        <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                        <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+                        <option value="Australia/Sydney">Sydney (UTC+11)</option>
+                        <option value="America/New_York">New York (UTC-4)</option>
+                        <option value="America/Denver">Denver (UTC-6)</option>
+                        <option value="America/Los_Angelos">Los Angelos (UTC-7)</option>
+                    </select>
+                </div>
+            
+                <!-- Schedule Table -->
+                <table id="schedule">
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Workshop Day</td>
+                            <td id="time1">09:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Speaker 1</td>
+                            <td id="time2">09:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Speaker 2</td>
+                            <td id="time3">09:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Speaker 3</td>
+                            <td id="time4">10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Poster Session & Coffee Break</td>
+                            <td id="time5">10:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Speaker 4</td>
+                            <td id="time6">11:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Speaker 5</td>
+                            <td id="time7">11:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Lightening Talks</td>
+                            <td id="time8">12:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
         <!-- <div class="container">
             <h2>Schedule</h2>
@@ -285,24 +348,17 @@
 </html>
 
 <script>
-function loadSchedule() {
-    fetch('schedule.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('schedule-section').innerHTML = data;
-    })
-    .catch(error => {
-        console.error('Error loading schedule.html:', error);
-    });
-}
-
-window.onload = loadSchedule;
 
 // List of events with their UTC times
 const events = [
-{ name: 'Workshop Day', timeUTC: '2025-06-17T14:00:00Z' },
-// { name: 'Session 1: Test-time Scaling Algorithms', timeUTC: '2025-03-01T11:00:00Z' },
-// { name: 'Session 2: Multimodal Models and Safety', timeUTC: '2025-03-01T13:00:00Z' },
+{ name: 'Workshop Day', timeUTC: '2025-06-12T14:00:00Z' },
+{ name: 'Speaker 1', timeUTC: '2025-06-12T14:00:00Z' },
+{ name: 'Speaker 2', timeUTC: '2025-06-12T14:30:00Z' },
+{ name: 'Speaker 3', timeUTC: '2025-06-12T15:00:00Z' },
+{ name: 'Poster Session & Coffee Break', timeUTC: '2025-06-12T15:30:00Z' },
+{ name: 'Speaker 4', timeUTC: '2025-06-12T16:00:00Z' },
+{ name: 'Speaker 5', timeUTC: '2025-06-12T16:30:00Z' },
+{ name: 'Lightening Talks', timeUTC: '2025-06-12T17:00:00Z' },
 // { name: 'Panel Discussion', timeUTC: '2025-03-01T15:00:00Z' },
 // { name: 'Networking & Closing', timeUTC: '2025-03-01T16:30:00Z' }
 ];
