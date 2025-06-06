@@ -342,6 +342,24 @@ select {
 
 /* Committee section */
 
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 columns */
+    gap: 3rem; /* Space between grid items */
+    text-align: center;
+}
+
+/* Profile image styling */
+.speaker-profile-img {
+    width: 100%;  /* Make the image fill the container */
+    height: 100%;
+    padding-bottom: 0%; /* Aspect ratio of 1:1 (square) */
+    border-radius: 60%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    max-width: 13rem;  /* Ensure a max size */
+}
+
 .committee-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 4 columns */
