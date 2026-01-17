@@ -191,25 +191,44 @@ header p {
 .cover-text {
     position: absolute;
     top: 50%;
-    left: 1.5rem;
+    left: 5%;
     transform: translateY(-50%); /* Vertically center the text */
     color: #fff;
-    max-width: 90%; /* Ensure title has enough space to wrap into two lines */
+    max-width: 55%; /* Ensure title has enough space */
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    border-left: 4px solid rgba(30, 221, 255, 0.8);
 }
 
 .cover-text h1 {
-    font-size: 3.5rem; /* Responsive font size */
-    margin: 0;
+    font-size: 3rem; /* Responsive font size */
+    margin: 0.8rem 0;
     word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
     white-space: normal; /* Allow text to break into multiple lines */
-    line-height: 1.2; /* Control line height for better spacing between lines */
+    line-height: 1.15; /* Control line height for better spacing between lines */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
 }
 
-.cover-text p {
-    padding-top: 1.6rem;
-    font-size: 1.2rem; /* Subtitle font size */
-    color: #ffd900bf;
-    font-weight: bold;
+.cover-subtitle {
+    font-size: 1rem;
+    color: rgba(30, 221, 255, 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    padding: 0;
+}
+
+.cover-location {
+    font-size: 0.95rem;
+    color: rgba(255, 217, 0, 0.85);
+    font-weight: 500;
+    margin-top: 1rem;
+    line-height: 1.5;
+    padding: 0;
 }
 
 /* Section styles */
@@ -408,16 +427,26 @@ select {
 
 /* Responsive design for smaller devices */
 @media (max-width: 768px) {
-    
-    .cover-text h1 {
-        font-size: 3rem; /* Responsive font size */
+
+    .cover-text {
+        left: 3%;
+        max-width: 70%;
+        padding: 1.2rem 1.5rem;
     }
 
-    .cover-text p {
-        padding-top: 1rem;
-        font-size: 1rem; /* Responsive font size */
+    .cover-text h1 {
+        font-size: 2.2rem;
     }
-    
+
+    .cover-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+    }
+
+    .cover-location {
+        font-size: 0.85rem;
+        margin-top: 0.8rem;
+    }
 
     .committee-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
@@ -429,13 +458,26 @@ select {
         grid-template-columns: 1fr; /* 1 column on small screens */
     }
 
-    .cover-text h1 {
-        font-size: 2rem; /* Responsive font size */
+    .cover-text {
+        left: 2%;
+        max-width: 90%;
+        padding: 1rem 1.2rem;
+        border-radius: 0.6rem;
     }
 
-    .cover-text p {
-        padding-top: 0.8rem;
-        font-size: 0.8rem; /* Responsive font size */
+    .cover-text h1 {
+        font-size: 1.6rem;
+        margin: 0.5rem 0;
+    }
+
+    .cover-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+    }
+
+    .cover-location {
+        font-size: 0.7rem;
+        margin-top: 0.6rem;
     }
 }
 
