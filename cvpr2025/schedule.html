@@ -1,0 +1,54 @@
+
+
+<div class="container">
+    <h1>Schedule</h1>
+
+    <!-- Timezone selection -->
+    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+        <label for="timezone" style="color: #fff;">Select Time Zone:</label>
+        <select id="timezone" class="timezone-select" onchange="updateSchedule()">
+            <option value="America/Chicago">Nashville (UTC-5)</option>
+            <option value="Europe/London">London (UTC+1)</option>
+            <option value="Europe/Rome">Rome (UTC+2)</option>
+            <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+            <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+            <option value="Australia/Sydney">Sydney (UTC+11)</option>
+            <option value="America/New_York">New York (UTC-4)</option>
+            <option value="America/Denver">Denver (UTC-6)</option>
+            <option value="America/Los_Angelos">Los Angelos (UTC-7)</option>
+        </select>
+    </div>
+
+    <!-- Schedule Table -->
+    <table id="schedule">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Workshop Day</td>
+                <td id="time1">09:00 AM</td>
+            </tr>
+            <tr>
+                <td>Session 1: Test-time Scaling Algorithms</td>
+                <td id="time2">11:00 AM</td>
+            </tr>
+            <tr>
+                <td>Session 2: Multimodal Models and Safety</td>
+                <td id="time3">01:00 PM</td>
+            </tr>
+            <tr>
+                <td>Panel Discussion</td>
+                <td id="time4">03:00 PM</td>
+            </tr>
+            <tr>
+                <td>Networking & Closing</td>
+                <td id="time5">04:30 PM</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

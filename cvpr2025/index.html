@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test-time Scaling for Computer Vision Workshop at CVPR2025">
+    <title>Test-time Scaling for Computer Vision (ViSCALE) Workshop - CVPR2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="resources/favicon-black.png" type="image/png">
+</head>
+<body>
+    <!--
+    <header>
+        <div class="container">
+            <h1>Test-time Scaling for Computer Vision (ViSCALE) Workshop</h1>
+            <p>CVPR2025 | Nashville, USA</p>
+        </div>
+    </header>-->
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container" style="width: 95%;">
+            <div class="logo-title">
+                <img src="resources/favicon-new-updated.png" alt="Logo" class="logo">
+                <h3 class="title">CVPR2025 ViSCALE Workshop</h3>
+            </div>
+
+            <div class="navlist">
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#important-dates">Important Dates</a></li>
+                    <li><a href="#papers">Accepted Papers</a></li>
+                    <li><a href="#speaker">Speakers</a></li>
+                    <li><a href="#committee">Organizers</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <li><a href="#introduction" onclick="Close()">Introduction</a></li>
+                    <li><a href="#important-dates" onclick="Close()">Important Dates</a></li>
+                    <li><a href="#papers" onclick="Close()">Accepted Papers</a></li>
+                    <li><a href="#speaker" onclick="Close()">Speakers</a></li>
+                    <li><a href="#committee" onclick="Close()">Organizers</a></li>
+                    <li><a href="#schedule" onclick="Close()">Schedule</a></li>
+                    <li><a href="#contact" onclick="Close()">Contact</a></li>
+                </div>
+              </div>
+
+        </div>
+    </nav>
+
+    <!-- Back to Latest Edition Banner -->
+    <div class="back-to-latest">
+        <a href="/">← Back to Latest Edition (CVPR 2026)</a>
+    </div>
+
+    <!-- Cover image with title -->
+    <section class="cover">
+        <img src="resources/cover_logo.png" alt="Cover Image" class="cover-image">
+        <div class="cover-text">
+            <p style="color:rgba(30, 221, 255, 0.744);">1st ViSCALE Workshop @ CVPR2025</p>
+            <h1>Test-time Scaling <br> for Computer Vision</h1>
+            <p>June 12th AM @ 109 Music City Center, Nashville TN, USA</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="introduction" class="section">
+        <div class="container">
+            <h1>Introduction</h1>
+            <p>Test-time scaling, which has demonstrated great success in improving reasoning for LLMs (e.g., OpenAI o1/o3, DeepSeek-R1), can hold significant promise for computer vision models as well. By allocating more computational resources during inference, vision models could achieve greater accuracy, robustness, and interpretability in complex tasks ranging from perception and understanding to reasoning and decision-making. This approach could enhance performance in high-stakes domains such as medical imaging, autonomous driving, and security surveillance, where precision and interpretability are crucial. Additionally, extending test-time scaling to multimodal models and generative architectures could foster more sophisticated cross-modal reasoning and higher-quality content generation. However, applying test-time scaling to vision models presents unique challenges. Vision tasks typically involve high-dimensional inputs, making computational scaling at test time more resource-intensive. Efficient algorithms will be necessary to ensure that the increased computation does not lead to impractical processing times or energy consumption. Moreover, ensuring robustness and safety when models are subjected to increased inference computation—particularly in dynamic or adversarial environments—will be crucial.</p>
+
+            <p style="margin-top: 1rem;">The Workshop on <strong>Test-time Scaling for Computer Vision (ViSCALE)</strong> at CVPR2025 aims to explore the frontiers of scaling test-time computation in vision models, addressing both theoretical advancements and practical implementations. We will discuss the suitability of test-time scaling for traditional vision tasks like perception and the extensions to multimodal and generative models, towards enhancing performance in critical domains. It will also cover solutions for efficient algorithms, considerations of robustness and safety, and novel problems in computer vision posed by test-time scaling. By bringing together experts, the workshop seeks to foster collaboration and innovation in applying this paradigm to push the limits of computer vision.</p>
+
+
+            <!--<p>The <strong>Test-time Scaling for Computer Vision (ViSCALE)</strong> workshop at CVPR2025 aims to explore the application of test-time scaling techniques in computer vision, inspired by recent advancements in large language models (LLMs). We will focus on challenges, opportunities, and future directions of scaling models during inference, with a special emphasis on multimodal models, generative models, and novel algorithmic solutions. Topics covered will include theoretical analysis, efficiency improvements, robustness and safety, and more.</p>-->
+        </div>
+    </section>
+
+    <section id="speaker" class="section">
+        <div class="container">
+            <h1>Speakers</h1>
+            <div class="speaker-grid">
+                
+                <div class="committee-member">
+                    <img src="resources/speaker/trevor.jpeg" alt="Speaker 3" class="speaker-profile-img">
+                    <a href='http://www.eecs.berkeley.edu/~trevor'><strong>Trevor Darrell</strong></a> U.C., Berkeley
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/Saining.png" alt="Speaker 2" class="speaker-profile-img">
+                    <a href='https://www.sainingxie.com/'><strong>Saining Xie</strong></a> New York University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/zhaoyue-2017_small.jpg" alt="Speaker 5" class="speaker-profile-img">
+                    <a href='https://zhaoyue-zephyrus.github.io/'><strong>Yue Zhao</strong></a> U.T., Austin
+                </div>
+                
+                <div class="committee-member">
+                    <img src="resources/committee/CihangXie.jpg" alt="Committee Member 4" class="speaker-profile-img">
+                    <a href='https://cihangxie.github.io'><strong>Cihang Xie</strong></a> U.C., Santa Cruz
+                </div>
+
+                <div class="committee-member">
+                    <img src="resources/speaker/Schimidt.jpg" alt="Speaker 1" class="speaker-profile-img">
+                    <a href='https://people.csail.mit.edu/ludwigs'><strong>Ludwig Schmidt</strong></a> Stanford University
+                </div>
+                
+                <div class="committee-member">
+                    <img src="resources/speaker/chenqiu.jpeg" alt="Speaker 6" class="speaker-profile-img">
+                    <a href='https://scholar.google.com/citations?user=uX5Y9XUAAAAJ&hl=en'><strong>Chen Qiu</strong></a> Bosch Center for AI
+                </div>
+                <!-- Additional members can be added here in a similar manner -->
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="schedule" class="section">
+
+        <div id="schedule-section">
+            <div class="container" style="width: 50%; justify-content: center; font-size: 2.5vh;">
+                <h1>Schedule</h1>
+            
+                <!-- Timezone selection -->
+                <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                    <label for="timezone" style="color: #fff;">Select Time Zone:</label>
+                    <select id="timezone" class="timezone-select" onchange="updateSchedule()">
+                        <option value="America/Chicago">Nashville (UTC-5)</option>
+                        <option value="Europe/London">London (UTC+1)</option>
+                        <option value="Europe/Rome">Rome (UTC+2)</option>
+                        <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                        <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+                        <option value="Australia/Sydney">Sydney (UTC+11)</option>
+                        <option value="America/New_York">New York (UTC-4)</option>
+                        <option value="America/Denver">Denver (UTC-6)</option>
+                        <option value="America/Los_Angelos">Los Angelos (UTC-7)</option>
+                    </select>
+                </div>
+            
+                <!-- Schedule Table -->
+                <table id="schedule">
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Opening Remarks</td>
+                            <td id="time1">09:00 AM</td><td id="time2">09:05 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Keynote Talk by Trevor Darrell</td>
+                            <td id="time3">09:05 AM</td><td id="time4">09:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Keynote Talk by Saining Xie</td>
+                            <td id="time5">09:30 AM</td><td id="time6">09:55 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Keynote Talk by Yue Zhao</td>
+                            <td id="time7">09:55 AM</td><td id="time8">10:20 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Coffee Break</td>
+                            <td id="time9">10:20 AM</td><td id="time10">10:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Keynote Talk by Cihang Xie</td>
+                            <td id="time11">10:30 AM</td><td id="time12">10:55 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Keynote Talk by Ludwig Schmidt</td>
+                            <td id="time13">10:55 AM</td><td id="time14">11:20 AM</td>
+                        </tr>
+
+                        <tr>
+                            <td>Keynote Talk by Chen Qiu</td>
+                            <td id="time15">11:20 AM</td><td id="time16">11:45 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Lightening Talks</td>
+                            <td id="time17">11:45 AM</td><td id="time18">12:25 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Closing Remarks</td>
+                            <td id="time19">12:25 PM</td><td id="time20">12:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Poster Session at ExHall D</td>
+                            <td id="time21">9:00 AM</td><td id="time22">12:30 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <!-- <div class="container">
+            <h2>Schedule</h2>
+            <p>The detailed workshop schedule will be available closer to the event. Below is a general overview:</p>
+            <ul>
+                <li><strong>09:00 - 09:30:</strong> Registration and Breakfast</li>
+                <li><strong>09:30 - 10:00:</strong> Opening Remarks</li>
+                <li><strong>10:00 - 12:00:</strong> Keynote Speaker 1</li>
+                <li><strong>12:00 - 13:30:</strong> Lunch</li>
+                <li><strong>13:30 - 15:30:</strong> Paper Presentations - Session 1</li>
+                <li><strong>15:30 - 16:00:</strong> Coffee Break</li>
+                <li><strong>16:00 - 18:00:</strong> Paper Presentations - Session 2</li>
+                <li><strong>18:00 - 18:30:</strong> Closing Remarks</li>
+            </ul>
+        </div> -->
+    </section>
+
+
+    <section id="important-dates" class="section">
+        <div class="container">
+            <h1>Important Dates</h1>
+            <!-- <ul>
+                <li><strong>Submission Deadline:</strong> March 15, 2025</li>
+                <li><strong>Notification of Acceptance:</strong> March 25, 2025</li>
+                <li><strong>Camera-Ready Submission:</strong> April 5, 2025</li>
+                <li><strong>Workshop Date:</strong> June 18, 2025</li>
+            </ul> -->
+
+                <div class="timeline">
+                    <div class="step">
+                        <div class="date">March 15, 2025 (AoE)</div>
+                        <div class="timestamp">
+                            <span> </span>
+                        </div>
+                        <div class="label">Submission Deadline</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">March 29, 2025 (AoE)</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Notification of Acceptance</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">April 14, 2025 (AoE)</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Camera-Ready Submission</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">June 12 AM, 2025</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Workshop Date</div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+
+    <section id="papers" class="section">
+        <div class="container">
+            <h1>Accepted Papers</h1>
+            <p>We hereby list the papers accepted to our workshop.</p>
+            <ul>
+                <li>On the Suitability of Reinforcement Fine-Tuning to Visual Tasks</li>
+                <li>TTGen: Incorporating Test-time scaling to diffusion models</li>
+                <li>Can Neural Networks Decide Their Own Depth?</li>
+                <li>Centaur: Robust End-to-End Autonomous Driving with Test-Time Training</li>
+                <li>Get a GRIP on Test Time Adaptation! Group Robust Inference-Time Policy Optimization for Vision Models</li>
+                <li>EasyARC: Evaluating Vision Language Models on True Visual Reasoning</li>
+                <li>TimeZero: Temporal Video Grounding with Reasoning-Guided LVLM</li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <section id="committee" class="section">
+        <div class="container">
+            <h1>Organizers</h1>
+            <div class="committee-grid">
+                
+                <div class="committee-member">
+                    <img src="resources/committee/yinpeng.jpeg" alt="Committee Member 1" class="profile-img">
+                    <a href='https://dongyp13.github.io'><strong>Yinpeng Dong</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/yichi-zhang.jpg" alt="Committee Member 2" class="profile-img">
+                    <a href='https://zycheiheihei.github.io'><strong>Yichi Zhang</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/CihangXie.jpg" alt="Committee Member 3" class="profile-img">
+                    <a href='https://cihangxie.github.io'><strong>Cihang Xie</strong></a> U.C., Santa Cruz
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/xueyan.jpeg" alt="Committee Member 4" class="profile-img">
+                    <a href='https://maureenzou.github.io/'><strong>Xueyan Zou</strong></a> U.C., San Diego
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/hangsu.jpeg" alt="Committee Member 0" class="profile-img">
+                    <a href='https://www.suhangss.me'><strong>Hang Su</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/Jindong-Gu.jpeg" alt="Committee Member 5" class="profile-img">
+                    <a href='https://jindonggu.github.io'><strong>Jindong Gu</strong></a> University of Oxford
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/llv_clean_back1.jpeg" alt="Committee Member 6" class="profile-img">
+                    <a href='https://sites.google.com/view/lingjuan-lyu/home'><strong>Lingjuan Lyu</strong></a> Sony
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/BoleiZhou.jpg" alt="Committee Member 7" class="profile-img">
+                    <a href='https://boleizhou.github.io/'><strong>Bolei Zhou</strong></a> U.C., Los Angelos
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/jun-wang.jpeg" alt="Committee Member 8" class="profile-img">
+                    <a href='http://www0.cs.ucl.ac.uk/staff/jun.wang/'><strong>Jun Wang</strong></a> University College London
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/junzhu.jpg" alt="Committee Member 9" class="profile-img">
+                    <a href='https://ml.cs.tsinghua.edu.cn/~jun/index.shtml'><strong>Jun Zhu</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/phil-torr.jpg" alt="Committee Member 10" class="profile-img">
+                    <a href='https://eng.ox.ac.uk/people/philip-torr/'><strong>Philip Torr</strong></a> University of Oxford
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/shanshiguang.jpeg" alt="Committee Member 11" class="profile-img">
+                    <a href='https://vipl.ict.ac.cn/people/_sgshan/'><strong>Shiguang Shan</strong></a> Chinese Academy of Sciences
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/Wanli-New.jpg" alt="Committee Member 12" class="profile-img">
+                    <a href='https://wlouyang.github.io'><strong>Wanli Ouyang</strong></a> Shanghai AI Laboratory
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/shuicheng.png" alt="Committee Member 13" class="profile-img">
+                    <a href='https://yanshuicheng.info/'><strong>Shuicheng Yan</strong></a> National University of Singapore
+                </div>
+
+                <!-- Additional members can be added here in a similar manner -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h1>Sponsors</h1>
+            <p>We are sincerely grateful for the supports from all our sponsors.</p>
+            <div class="committee-grid" style="margin-top: 3vh; background-color: #fff;">
+                <div class="committee-member" style="flex-wrap: wrap;">
+                    <img src="resources/sponsor/bosch.png" alt="Sponsor 0" style="background-color: #fff; width: 100%;;">
+                </div>
+                <div class="committee-member" style="flex-wrap: wrap;">
+                    <img src="resources/sponsor/alibaba.png" alt="Sponsor 0" style="background-color: #fff; width: 80%; margin-top: 5%;">
+                </div>
+                <div class="committee-member" style="flex-wrap: wrap;">
+                    <img src="resources/sponsor/horizon.png" alt="Sponsor 0" style="background-color: #fff; width: 100%; margin-top: 5%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h1>Contact</h1>
+            <p>For any inquiries, please contact the official email: <a href="mailto:viscalecvpr@gmail.com">viscalecvpr@gmail.com</a> or our organizers, Yinpeng Dong: <a href="mailto:dongyinpeng@mail.tsinghua.edu.cn">dongyinpeng@mail.tsinghua.edu.cn</a> and Yichi Zhang: <a href="mailto:zyc22@mails.tsinghua.edu.cn">zyc22@mails.tsinghua.edu.cn</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ViSCALE Workshop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+// List of events with their UTC times
+const events = [
+{ name: 'Opening Remarks start', timeUTC: '2025-06-12T14:00:00Z' },
+{ name: 'Opening Remarks end', timeUTC: '2025-06-12T14:05:00Z' },
+{ name: 'Speaker 1 start', timeUTC: '2025-06-12T14:05:00Z' },
+{ name: 'Speaker 1 end', timeUTC: '2025-06-12T14:30:00Z' },
+{ name: 'Speaker 2 start', timeUTC: '2025-06-12T14:30:00Z' },
+{ name: 'Speaker 2 end', timeUTC: '2025-06-12T14:55:00Z' },
+{ name: 'Speaker 3 start', timeUTC: '2025-06-12T14:55:00Z' },
+{ name: 'Speaker 3 end', timeUTC: '2025-06-12T15:20:00Z' },
+{ name: 'Coffee Break start', timeUTC: '2025-06-12T15:20:00Z' },
+{ name: 'Coffee Break end', timeUTC: '2025-06-12T15:30:00Z' },
+{ name: 'Speaker 4 start', timeUTC: '2025-06-12T15:30:00Z' },
+{ name: 'Speaker 4 end', timeUTC: '2025-06-12T15:55:00Z' },
+{ name: 'Speaker 5 start', timeUTC: '2025-06-12T15:55:00Z' },
+{ name: 'Speaker 5 end', timeUTC: '2025-06-12T16:20:00Z' },
+{ name: 'Speaker 6 start', timeUTC: '2025-06-12T16:20:00Z' },
+{ name: 'Speaker 6 end', timeUTC: '2025-06-12T16:45:00Z' },
+{ name: 'Lightening Talks start', timeUTC: '2025-06-12T16:45:00Z' },
+{ name: 'Lightening Talks end', timeUTC: '2025-06-12T17:25:00Z' },
+{ name: 'Closing Remarks start', timeUTC: '2025-06-12T17:25:00Z' },
+{ name: 'Closing Remarks end', timeUTC: '2025-06-12T17:30:00Z' },
+{ name: 'Poster Session start', timeUTC: '2025-06-12T14:00:00Z' },
+{ name: 'Poster Session end', timeUTC: '2025-06-12T17:30:00Z' },
+// { name: 'Panel Discussion', timeUTC: '2025-03-01T15:00:00Z' },
+// { name: 'Networking & Closing', timeUTC: '2025-03-01T16:30:00Z' }
+];
+
+// Function to convert UTC to selected time zone and update the schedule
+function updateSchedule() {
+    const timezone = document.getElementById('timezone').value;
+    console.log(timezone)
+    const dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+
+    events.forEach((event, index) => {
+        const eventDate = new Date(event.timeUTC);
+        const timeInZone = eventDate.toLocaleTimeString('en-US', { timeZone: timezone, ...dateOptions });
+        document.getElementById(`time${index + 1}`).textContent = timeInZone;
+    });
+}
+
+// Initialize the schedule with the default time zone (UTC)
+updateSchedule();
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function Close() {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
