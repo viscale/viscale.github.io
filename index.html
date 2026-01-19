@@ -35,6 +35,8 @@
                     <li><a href="#speaker">Speakers</a></li>
                     <li><a href="#committee">Organizers</a></li>
                     <li><a href="#schedule">Schedule</a></li>
+                    <!-- <li><a href="#sponsors">Sponsors</a></li> -->
+                    <li><a href="#past-editions">Past Editions</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -48,6 +50,8 @@
                     <li><a href="#speaker" onclick="Close()">Speakers</a></li>
                     <li><a href="#committee" onclick="Close()">Organizers</a></li>
                     <li><a href="#schedule" onclick="Close()">Schedule</a></li>
+                    <!-- <li><a href="#sponsors" onclick="Close()">Sponsors</a></li> -->
+                    <li><a href="#past-editions" onclick="Close()">Past Editions</a></li>
                     <li><a href="#contact" onclick="Close()">Contact</a></li>
                 </div>
               </div>
@@ -246,7 +250,8 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <!--
+    <section id="sponsors" class="section">
         <div class="container">
             <h1>Sponsors</h1>
             <p>We are sincerely grateful for the supports from all our sponsors.</p>
@@ -260,6 +265,74 @@
                 <div class="committee-member" style="flex-wrap: wrap;">
                     <img src="resources/sponsor/horizon.png" alt="Sponsor 0" style="background-color: #fff; width: 100%; margin-top: 5%;">
                 </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+
+    <!-- Past Editions Section -->
+    <section id="past-editions" class="section">
+        <div class="container">
+            <h1>Past Editions</h1>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">Explore previous workshops and their contributions to the field</p>
+            <div class="past-editions-grid-3d">
+                <div class="edition-card-3d" onclick="window.location.href='/cvpr2025/'" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-layer layer-back">
+                            <div class="floating-particles">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="card-layer layer-base">
+                            <div class="edition-header-3d">
+                                <div class="edition-badge-3d">1st Edition</div>
+                                <div class="edition-status-3d">
+                                    <span class="status-dot"></span>
+                                    Completed
+                                </div>
+                            </div>
+                            <div class="edition-year-3d">2025</div>
+                            <div class="edition-title-3d">ViSCALE Workshop</div>
+                            <p class="edition-info-3d">Test-time Scaling for Computer Vision</p>
+                        </div>
+                        <div class="card-layer layer-front">
+                            <div class="edition-details-3d">
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-calendar"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Date</span>
+                                        <span class="detail-value">June 12, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-map-marker"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Location</span>
+                                        <span class="detail-value">Nashville, TN, USA</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-building"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Conference</span>
+                                        <span class="detail-value">CVPR 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/cvpr2025/" class="edition-link-3d" onclick="event.stopPropagation();">
+                                <span>Explore Workshop</span>
+                                <div class="link-icon">
+                                    <i class="fa fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-reflection"></div>
+                </div>
+                <!-- 未来可以继续添加更多历史版本 -->
             </div>
         </div>
     </section>
@@ -311,5 +384,85 @@ window.onclick = function(event) {
     }
   }
 }
+
+// 3D Tilt Effect for Past Editions Cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.edition-card-3d[data-tilt]');
+
+    cards.forEach(card => {
+        const content = card.querySelector('.card-content');
+        const layers = card.querySelectorAll('.card-layer');
+
+        // Mouse move handler for 3D tilt
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const cardCenterX = rect.left + rect.width / 2;
+            const cardCenterY = rect.top + rect.height / 2;
+
+            // Calculate rotation based on mouse position
+            const mouseX = e.clientX - cardCenterX;
+            const mouseY = e.clientY - cardCenterY;
+
+            // Normalize to -1 to 1 range
+            const normalizedX = mouseX / (rect.width / 2);
+            const normalizedY = mouseY / (rect.height / 2);
+
+            // Apply rotation (max 15 degrees)
+            const rotateY = normalizedX * 15;
+            const rotateX = -normalizedY * 15;
+
+            // Apply main card transform
+            card.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+            // Apply parallax to layers
+            layers.forEach((layer, index) => {
+                const depth = (index - 1) * 15; // Different depth for each layer
+                const translateX = normalizedX * depth;
+                const translateY = normalizedY * depth;
+
+                if (layer.classList.contains('layer-back')) {
+                    layer.style.transform = `translateZ(-30px) scale(1.06) translate(${translateX * -0.5}px, ${translateY * -0.5}px)`;
+                } else if (layer.classList.contains('layer-front')) {
+                    layer.style.transform = `translateZ(40px) translate(${translateX}px, ${translateY}px)`;
+                }
+            });
+
+            // Dynamic shine/highlight effect based on mouse position
+            const shineX = ((e.clientX - rect.left) / rect.width) * 100;
+            const shineY = ((e.clientY - rect.top) / rect.height) * 100;
+            content.style.background = `
+                radial-gradient(circle at ${shineX}% ${shineY}%, rgba(30, 221, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(165deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)
+            `;
+        });
+
+        // Mouse leave - reset transforms
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.5s ease-out';
+
+            layers.forEach(layer => {
+                layer.style.transition = 'transform 0.5s ease-out';
+                if (layer.classList.contains('layer-back')) {
+                    layer.style.transform = 'translateZ(-30px) scale(1.06)';
+                } else if (layer.classList.contains('layer-front')) {
+                    layer.style.transform = 'translateZ(40px)';
+                } else {
+                    layer.style.transform = 'translateZ(0)';
+                }
+            });
+
+            content.style.background = 'linear-gradient(165deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)';
+        });
+
+        // Mouse enter - enable fast transitions
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease-out';
+            layers.forEach(layer => {
+                layer.style.transition = 'transform 0.1s ease-out';
+            });
+        });
+    });
+});
 
 </script>
