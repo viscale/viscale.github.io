@@ -1,0 +1,23 @@
+Topics of Interest
+We welcome original research contributions on topics including, but not limited to:
+
+Theoretical analysis of test-time scaling in computer vision.
+
+Test-time scaling for high-level visual reasoning (e.g., spatial reasoning, planning).
+
+Extensions to Multimodal Foundation Models and World Models.
+
+Efficient algorithms for inference-time scaling.
+
+Trustworthiness, robustness, and safety in scaled vision models.
+
+Benchmarks and evaluations for test-time scaling techniques.
+
+Submission Guidelines
+All submissions will handle via [OpenReview](https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE). The review process is double-blind.
+
+Full Papers: Up to 8 pages (excluding references). Accepted papers will be published in the CVPR 2026 Workshop Proceedings.
+
+Extended Abstracts: Up to 4 pages (excluding references). Suitable for preliminary results or works in progress. (Non-archival).
+
+Format: Please use the standard [CVPR 2026 Author Kit](https://github.com/cvpr-org/author-kit)
