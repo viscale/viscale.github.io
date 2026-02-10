@@ -179,51 +179,51 @@ header p {
     object-fit: cover;
 }
 
+
 .cover-text {
     position: absolute;
     text-align: center;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    width: 90%;
-    max-width: 1200px;
-    /* allow long titles to wrap */
+    width: auto;
+    max-width: 90%;
+    max-height: 85%;
     white-space: normal;
     word-wrap: break-word;
     /* semi-transparent backdrop */
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    padding: 2rem 3rem;
-    border-radius: 1rem;
+    padding: clamp(0.6rem, 2.5vw, 2rem) clamp(1rem, 4vw, 3rem);
+    border-radius: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .cover-title {
-    font-size: clamp(1rem, 3.5vw, 2.5rem);
+    font-size: clamp(0.85rem, 3.5vw, 2.5rem);
     color: #ffffff;
     line-height: 1.25;
 }
 
 .cover-subtitle {
-    font-size: clamp(0.75rem, 1.8vw, 1.2rem);
-    margin-top: 1rem;
+    font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+    margin-top: clamp(0.2rem, 0.8vw, 0.6rem);
     color: #ffffff;
 }
 
 .cover-date {
-    font-size: clamp(0.75rem, 1.8vw, 1.2rem);
-    margin-top: 1rem;
+    font-size: clamp(0.6rem, 1.8vw, 1.2rem);
     color: #ffffff;
 }
 
 .cover-scroll-button {
     display: inline-block;
     padding: 0.4rem 0.8rem;
-    margin-top: 3rem;
-    background-color: #2ab0fd;
+    margin-top: clamp(0.3rem, 1.2vw, 1rem);
+    background-color: #1D3C5E;
     color: rgb(255, 255, 255);
-    font-size: 1.2rem;
+    font-size: clamp(0.55rem, 1.5vw, 0.8rem);
     border: none;
     border-radius: 0.4rem;
     text-decoration: none;
