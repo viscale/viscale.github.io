@@ -183,7 +183,7 @@ header p {
 .cover-text {
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -240,7 +240,7 @@ header p {
 
 /* Section styles */
 .section {
-    padding: 2rem 0;
+    padding: clamp(1rem, 3vw, 2rem) 0;
     font-size: 1rem;
 }
 
