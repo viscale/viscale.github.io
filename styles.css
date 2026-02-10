@@ -386,7 +386,7 @@ select {
 
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 4 columns */
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
     gap: 1rem; /* Space between grid items */
     text-align: center;
 }
