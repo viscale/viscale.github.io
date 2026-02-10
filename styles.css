@@ -169,7 +169,7 @@ header p {
     position: relative;
     width: 100%;
     /* guarantee a minimum height so text always has room */
-    min-height: 280px;
+    /* min-height: 280px; */
 }
 
 .cover img {
@@ -183,14 +183,14 @@ header p {
 .cover-text {
     position: absolute;
     text-align: center;
-    top: 43%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     width: auto;
     max-width: 90%;
     max-height: 85%;
-    white-space: normal;
+    white-space: nowrap;
     word-wrap: break-word;
     /* semi-transparent backdrop */
     background: rgba(0, 0, 0, 0.35);
@@ -200,11 +200,21 @@ header p {
     border-radius: clamp(0.5rem, 1.5vw, 1rem);
 }
 
+
+@media (max-width: 600px) {
+    .cover-text {
+        white-space: normal;
+        top: 50%;
+    }
+}
+
+
 .cover-title {
     font-size: clamp(0.85rem, 3.5vw, 2.5rem);
     color: #ffffff;
     line-height: 1.25;
 }
+
 
 .cover-subtitle {
     font-size: clamp(0.6rem, 1.8vw, 1.2rem);
@@ -240,7 +250,7 @@ header p {
 
 /* Section styles */
 .section {
-    padding: clamp(1rem, 3vw, 2rem) 0;
+    padding: 2rem 0;
     font-size: 1rem;
 }
 
