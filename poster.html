@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViSCALE Workshop Poster - CVPR2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a14;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .poster {
+            width: 1100px;
+            min-height: 1700px;
+            aspect-ratio: 11 / 17;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(170deg,
+                rgba(15, 23, 42, 0.97) 0%,
+                rgba(20, 30, 50, 0.98) 50%,
+                rgba(10, 15, 30, 0.99) 100%);
+            padding: 50px 60px;
+            overflow: hidden;
+        }
+
+        /* Background image with overlay */
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('resources/new-cover2.png') center top / cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        /* Gradient overlay for depth */
+        .poster::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 0%, rgba(30, 221, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(255, 180, 50, 0.05) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .poster > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(30, 221, 255, 0.25);
+            background: linear-gradient(180deg, rgba(30, 221, 255, 0.03) 0%, transparent 100%);
+            margin: -45px -50px 35px -50px;
+            padding: 45px 50px 30px 50px;
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 40px rgba(30, 221, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            background: linear-gradient(90deg, #1edcff, #00d4aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item .label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .info-item .value {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .deadline {
+            background: linear-gradient(90deg, rgba(255, 180, 50, 0.15), rgba(255, 120, 50, 0.1));
+            border: 1px solid rgba(255, 180, 50, 0.3);
+            padding: 12px 28px;
+            margin-top: 22px;
+            display: inline-block;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .deadline .label {
+            color: #ffb432;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .deadline .value {
+            color: #fff;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        /* Section Title */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            margin-top: 28px;
+        }
+
+        .section-title .icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #ffb432, #ff8c32);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 180, 50, 0.3);
+        }
+
+        .section-title h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* People Grid */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .people-grid.organizers {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .person {
+            text-align: center;
+        }
+
+        .person-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid rgba(30, 221, 255, 0.4);
+            margin-bottom: 10px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .person-img:hover {
+            border-color: rgba(30, 221, 255, 0.8);
+            box-shadow: 0 8px 30px rgba(30, 221, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .person-img.contain-fit {
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        .person-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .person-affiliation {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.35;
+        }
+
+        /* Bottom Section */
+        .bottom-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 25px;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-width: 200px;
+        }
+
+        /* Info Box - unified style for topics, submission, dates */
+        .info-box {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 14px;
+            padding: 18px 20px;
+            border: 1px solid rgba(30, 221, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-box h4 {
+            color: #ffb432;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .info-box h4::before {
+            content: '★';
+            font-size: 0.85rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 7px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .info-box li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #1edcff;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .info-box p strong {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .info-box p.track-title {
+            color: #1edcff;
+            font-size: 0.9rem;
+        }
+
+        .info-box a {
+            color: #1edcff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .info-box a:hover {
+            color: #00d4aa;
+        }
+
+        /* QR Codes */
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .qr-item {
+            text-align: center;
+        }
+
+        .qr-item img {
+            width: 130px;
+            height: 130px;
+            background: #fff;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-item p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* Sponsors */
+        .sponsors {
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .sponsors h4 {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .sponsors-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 12px 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .sponsor-logo {
+            height: 32px;
+            width: auto;
+            max-width: 90px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <h1>2nd ViSCALE Workshop @ CVPR2026</h1>
+            <h2>Test-time Scaling for Computer Vision</h2>
+
+            <div class="info-row">
+                <div class="info-item">
+                    <div class="label">Date</div>
+                    <div class="value">June 3rd or 4th, 2026 (Half Day)</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Location</div>
+                    <div class="value">Colorado Convention Center, Denver CO, USA</div>
+                </div>
+            </div>
+
+            <div class="deadline">
+                <span class="label">Submission Deadline:</span>
+                <span class="value">March 10, 2026 (AoE)</span>
+            </div>
+        </div>
+
+        <!-- Keynote Speakers -->
+        <div class="section-title">
+            <div class="icon">★</div>
+            <h3>Keynote Speakers</h3>
+        </div>
+        <div class="people-grid">
+            <div class="person">
+                <img src="resources/speaker/manling_li.jpg" alt="Manling Li" class="person-img">
+                <div class="person-name">Manling Li</div>
+                <div class="person-affiliation">Northwestern University</div>
+            </div>
+            <div class="person">
+                <img src="resources/speaker/ranjay_krishna.jpg" alt="Ranjay Krishna" class="person-img">
+                <div class="person-name">Ranjay Krishna</div>
+                <div class="person-affiliation">University of Washington</div>
+            </div>
+            <div class="person">
+                <img src="resources/speaker/sergey_levine.jpg" alt="Sergey Levine" class="person-img">
+                <div class="person-name">Sergey Levine</div>
+                <div class="person-affiliation">UC Berkeley</div>
+            </div>
+            <div class="person">
+                <img src="resources/speaker/mahmoud_assran.jpg" alt="Mahmoud Assran" class="person-img">
+                <div class="person-name">Mahmoud Assran</div>
+                <div class="person-affiliation">Meta AI</div>
+            </div>
+            <div class="person">
+                <img src="resources/speaker/haoqi_fan.jpg" alt="Haoqi Fan" class="person-img contain-fit">
+                <div class="person-name">Haoqi Fan</div>
+                <div class="person-affiliation">TikTok</div>
+            </div>
+            <div class="person">
+                <img src="resources/speaker/ziwei_liu.png" alt="Ziwei Liu" class="person-img">
+                <div class="person-name">Ziwei Liu</div>
+                <div class="person-affiliation">Nanyang Technological University</div>
+            </div>
+        </div>
+
+        <!-- Organizers -->
+        <div class="section-title">
+            <div class="icon">★</div>
+            <h3>Organizers</h3>
+        </div>
+        <div class="people-grid organizers">
+            <div class="person">
+                <img src="resources/committee/yinpeng.jpeg" alt="Yinpeng Dong" class="person-img">
+                <div class="person-name">Yinpeng Dong</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/yichi-zhang.jpg" alt="Yichi Zhang" class="person-img">
+                <div class="person-name">Yichi Zhang</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/yuhuang.jpg" alt="Yu Huang" class="person-img">
+                <div class="person-name">Yu Huang</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/CihangXie.jpg" alt="Cihang Xie" class="person-img">
+                <div class="person-name">Cihang Xie</div>
+                <div class="person-affiliation">U.C., Santa Cruz</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/xueyan.jpeg" alt="Xueyan Zou" class="person-img">
+                <div class="person-name">Xueyan Zou</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/miao_liu.jpg" alt="Miao Liu" class="person-img">
+                <div class="person-name">Miao Liu</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/hangsu.jpeg" alt="Hang Su" class="person-img">
+                <div class="person-name">Hang Su</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/junzhu.jpg" alt="Jun Zhu" class="person-img">
+                <div class="person-name">Jun Zhu</div>
+                <div class="person-affiliation">Tsinghua University</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/shanshiguang.jpeg" alt="Shiguang Shan" class="person-img">
+                <div class="person-name">Shiguang Shan</div>
+                <div class="person-affiliation">Chinese Academy of Sciences</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/shuicheng.png" alt="Shuicheng Yan" class="person-img">
+                <div class="person-name">Shuicheng Yan</div>
+                <div class="person-affiliation">National University of Singapore</div>
+            </div>
+            <div class="person">
+                <img src="resources/committee/shilong_liu.jpg" alt="Shilong Liu" class="person-img">
+                <div class="person-name">Shilong Liu</div>
+                <div class="person-affiliation">Princeton University</div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="left-column">
+                <div class="info-box">
+                    <h4>Topics of Interest</h4>
+                    <ul>
+                        <li>Theoretical analysis of test-time scaling in computer vision</li>
+                        <li>Test-time scaling for high-level visual reasoning</li>
+                        <li>Extensions to Multimodal Foundation Models and World Models</li>
+                        <li>Efficient algorithms for inference-time scaling</li>
+                        <li>Trustworthiness, robustness, and safety in scaled vision models</li>
+                        <li>Benchmarks and evaluations for test-time scaling techniques</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Submission Details</h4>
+                    <p class="track-title"><strong>Track 1: Full Papers (Archival)</strong></p>
+                    <p>8 pages, published in CVPR 2026 Workshop Proceedings & IEEE Xplore. Double-blind.</p>
+                    <p class="track-title" style="margin-top: 10px;"><strong>Track 2: Extended Abstracts (Non-Archival)</strong></p>
+                    <p>Up to 4 pages, for preliminary or published work. NOT in proceedings.</p>
+                    <p style="margin-top: 10px;"><strong>Format:</strong> CVPR 2026 Author Kit</p>
+                    <p><strong>Submit via:</strong> <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE">OpenReview</a></p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="qr-section">
+                    <div class="qr-item">
+                        <img src="resources/poster/qrcode_workshop.png" alt="Workshop Homepage QR">
+                        <p>Workshop<br>Homepage</p>
+                    </div>
+                    <div class="qr-item">
+                        <img src="resources/poster/qrcode_submission.png" alt="Submission QR">
+                        <p>Submission<br>Portal</p>
+                    </div>
+                </div>
+
+                <div class="sponsors">
+                    <h4>Sponsors</h4>
+                    <div class="sponsors-container">
+                        <img src="resources/sponsor/bosch.png" alt="Bosch" class="sponsor-logo">
+                        <img src="resources/sponsor/jiqizhixin.png" alt="机器之心 Synced" class="sponsor-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

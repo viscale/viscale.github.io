@@ -371,12 +371,17 @@ select {
 /* Profile image styling */
 .speaker-profile-img {
     width: 100%;  /* Make the image fill the container */
-    height: 100%;
-    padding-bottom: 0%; /* Aspect ratio of 1:1 (square) */
-    border-radius: 60%;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
     max-width: 13rem;  /* Ensure a max size */
+    aspect-ratio: 1 / 1;  /* Force 1:1 square ratio */
+    border-radius: 50%;
+    object-fit: cover;  /* Crop image to fit square */
+    margin-bottom: 0.5rem;
+}
+
+/* For images that need white padding instead of cropping */
+.speaker-profile-img.contain-fit {
+    object-fit: contain;
+    background-color: #fff;
 }
 
 .committee-grid {
