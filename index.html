@@ -11,19 +11,12 @@
     <link rel="icon" href="resources/favicon-black.png" type="image/png">
 </head>
 <body>
-    <!--
-    <header>
-        <div class="container">
-            <h1>Test-time Scaling for Computer Vision (ViSCALE) Workshop</h1>
-            <p>CVPR2025 | Nashville, USA</p>
-        </div>
-    </header>-->
 
     <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container" style="width: 95%;">
             <div class="logo-title">
-                <img src="resources/favicon-new-updated.png" alt="Logo" class="logo">
+                <img src="resources/cvpr-navbar-logo.svg" alt="Logo" class="logo">
                 <h3 class="title">CVPR2026 ViSCALE Workshop</h3>
             </div>
 
@@ -33,25 +26,27 @@
                     <li><a href="#call-for-papers">Call for Papers</a></li>
                     <li><a href="#important-dates">Important Dates</a></li>
                     <li><a href="#speaker">Speakers</a></li>
-                    <li><a href="#committee">Organizers</a></li>
                     <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#sponsors">Sponsors</a></li>
+                    <!-- <li><a href="#papers">Accepted Papers</a></li> -->
+                    <li><a href="#committee">Organizers</a></li>
                     <li><a href="#past-editions">Past Editions</a></li>
+                    <li><a href="#sponsorship">Sponsors</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                <button onclick="myFunction(event)" class="dropbtn"><i class="fa fa-bars"></i></button>
                 <div id="myDropdown" class="dropdown-content">
                     <li><a href="#introduction" onclick="Close()">Introduction</a></li>
                     <li><a href="#call-for-papers" onclick="Close()">Call for Papers</a></li>
                     <li><a href="#important-dates" onclick="Close()">Important Dates</a></li>
                     <li><a href="#speaker" onclick="Close()">Speakers</a></li>
-                    <li><a href="#committee" onclick="Close()">Organizers</a></li>
                     <li><a href="#schedule" onclick="Close()">Schedule</a></li>
-                    <li><a href="#sponsors" onclick="Close()">Sponsors</a></li>
+                    <!-- <li><a href="#papers" onclick="Close()">Accepted Papers</a></li> -->
+                    <li><a href="#committee" onclick="Close()">Organizers</a></li>
                     <li><a href="#past-editions" onclick="Close()">Past Editions</a></li>
+                    <li><a href="#sponsorship" onclick="Close()">Sponsors</a></li>
                     <li><a href="#contact" onclick="Close()">Contact</a></li>
                 </div>
               </div>
@@ -63,9 +58,10 @@
     <section class="cover">
         <img src="resources/new-cover.png" alt="Cover Image" class="cover-image">
         <div class="cover-text">
-            <p class="cover-subtitle">2nd ViSCALE Workshop @ CVPR2026</p>
-            <h1>Test-time Scaling <br> for Computer Vision</h1>
-            <p class="cover-location">June 3rd or 4th, 2026 (Half Day)<br>Colorado Convention Center, Denver CO, USA</p>
+            <h1 class="cover-title">2nd ViSCALE<br>Test-Time Scaling for Computer Vision</h1>
+            <h1 class="cover-subtitle">CVPR2026 @ Denver, Colorado</h1>
+            <p class="cover-date">Half day, June 3rd/4th, 2026</p>
+            <a href="#call-for-papers" class="cover-scroll-button">Call for Papers</a>
         </div>
     </section>
 
@@ -73,7 +69,7 @@
     <section id="introduction" class="section">
         <div class="container">
             <h1>Introduction</h1>
-            <p>Test-time scaling, which has shown remarkable success in improving reasoning for large language models, holds significant promise for computer vision and multimodal systems. By allocating additional computation during inference, vision models can enhance accuracy, robustness, and interpretability in complex reasoning tasks. Recent advances in the “thinking with images” paradigm, where models perform visual chain-of-thought reasoning through iterative perception and synthesis, suggest a shift toward visually grounded cognition rather than purely symbolic inference. Extending test-time scaling to this setting could enable adaptive visual reasoning, where models selectively focus computation on ambiguous or conceptually rich regions. Coupled with emerging trends such as multimodal reflection, self-evaluation, and scalable visual generation, this approach paves the way for more general, controllable, and interpretable vision reasoning systems. However, scaling inference on high-dimensional visual inputs remains computationally expensive, efficient allocation of resources is still an open problem, and ensuring robustness, safety, and energy efficiency under expanded test-time computation poses significant challenges.</p>
+            <p>Test-time scaling, which has shown remarkable success in improving reasoning for large language models, holds significant promise for computer vision and multimodal systems. By allocating additional computation during inference, vision models can enhance accuracy, robustness, and interpretability in complex reasoning tasks. Recent advances in the "thinking with images" paradigm, where models perform visual chain-of-thought reasoning through iterative perception and synthesis, suggest a shift toward visually grounded cognition rather than purely symbolic inference. Extending test-time scaling to this setting could enable adaptive visual reasoning, where models selectively focus computation on ambiguous or conceptually rich regions. Coupled with emerging trends such as multimodal reflection, self-evaluation, and scalable visual generation, this approach paves the way for more general, controllable, and interpretable vision reasoning systems. However, scaling inference on high-dimensional visual inputs remains computationally expensive, efficient allocation of resources is still an open problem, and ensuring robustness, safety, and energy efficiency under expanded test-time computation poses significant challenges.</p>
 
             <p style="margin-top: 1rem;">The <strong>2nd Workshop on Test-time Scaling for Computer Vision (ViSCALE)</strong> aims to explore the frontiers of scaling test-time computation in vision models, addressing both theoretical advancements and practical implementations. We will discuss the suitability of test-time scaling for traditional vision tasks like perception and the extensions to multimodal and generative models, towards enhancing performance in critical domains. It will also cover solutions for efficient algorithms, considerations of robustness and safety, and novel problems in computer vision posed by test-time scaling. By bringing together experts, the workshop seeks to foster collaboration and innovation in applying this paradigm to push the limits of computer vision.</p>
         </div>
@@ -82,39 +78,106 @@
     <section id="call-for-papers" class="section">
         <div class="container">
             <h1>Call for Papers</h1>
-            <p>We invite submissions of original research papers, work-in-progress papers, and extended abstracts.</p>
-
-            <h3 style="margin-top: 2rem; color: rgba(30, 221, 255, 0.744);">Topics of Interest</h3>
-            <p style="margin-top: 0.5rem;">We welcome original research contributions on topics including, but not limited to:</p>
-            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <p>We invite submissions of original research papers, work-in-progress papers, and extended abstracts. Topics of interest include but are not limited to:</p>
+            <ul class="topics-list">
                 <li>Theoretical analysis of test-time scaling in computer vision</li>
                 <li>Test-time scaling for high-level visual reasoning (e.g., spatial reasoning, planning)</li>
                 <li>Extensions to Multimodal Foundation Models and World Models</li>
                 <li>Efficient algorithms for inference-time scaling</li>
                 <li>Trustworthiness, robustness, and safety in scaled vision models</li>
                 <li>Benchmarks and evaluations for test-time scaling techniques</li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; color: rgba(30, 221, 255, 0.744);">Submission Guidelines</h3>
-            <p style="margin-top: 0.5rem;">All submissions will be handled via <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE" target="_blank" style="color: rgba(30, 221, 255, 0.744);">OpenReview</a>. The review process is double-blind.</p>
-
-            <h4 style="margin-top: 1.5rem; color: rgba(255, 180, 50, 0.9);">Track 1: Full Papers (Proceedings Track / Archival)</h4>
+            </ul></br>
+            <p><strong>Submission Guidelines:</strong></p>
+            <p>All submissions will be handled via <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE">OpenReview</a>. The review process is double-blind. All papers must be formatted using the <a href="https://github.com/cvpr-org/author-kit/archive/refs/tags/CVPR2026-v1(latex).zip">CVPR 2026 Author Kit</a>. We welcome different types of submissions to the workshop, including:</p>
+            <h4 style="margin-top: 1.5rem; color: rgba(10, 1, 135, 0.9);">Track 1: Full Papers (Archival)</h4>
             <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                <li><strong>Length:</strong> 8 pages (excluding references)</li>
+                <li><strong>Length:</strong> Up to 8 pages (excluding references)</li>
                 <li><strong>Description:</strong> Accepted papers will be published in the CVPR 2026 Workshop Proceedings and IEEE Xplore.</li>
-                <li><strong>Format:</strong> <a href="https://github.com/cvpr-org/author-kit" target="_blank" style="color: rgba(30, 221, 255, 0.744);">CVPR 2026 Author Kit</a> (Double-blind)</li>
             </ul>
 
-            <h4 style="margin-top: 1.5rem; color: rgba(255, 180, 50, 0.9);">Track 2: Extended Abstracts (Non-Archival)</h4>
+            <h4 style="margin-top: 1.5rem; color: rgba(10, 1, 135, 0.9);">Track 2: Extended Abstracts (Non-Archival)</h4>
             <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
                 <li><strong>Length:</strong> Up to 4 pages (excluding references)</li>
                 <li><strong>Description:</strong> Best for preliminary work or works already published elsewhere. These will NOT appear in the proceedings.</li>
-                <li><strong>Format:</strong> <a href="https://github.com/cvpr-org/author-kit" target="_blank" style="color: rgba(30, 221, 255, 0.744);">CVPR 2026 Author Kit</a></li>
+                <li><strong>Instructions:</strong> For submissions to the this track, the Appendix will not be reviewed. The submission must be limited to 4 pages of content. Include the label <strong>"EXTENDED ABSTRACT" / "SHORT"</strong> at the start of the title to distinguish it from regular submissions. If this label is not included, the submission will be treated as a regular one.</li>
             </ul>
 
-            <p style="margin-top: 1.5rem;"><strong>Submit your paper:</strong> <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE" target="_blank" style="color: rgba(30, 221, 255, 0.744);">OpenReview Submission Portal</a></p>
+            <p>We strongly encourage authors to carefully follow the <a href="https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines">CVPR Author Guidelines</a>, since our workshop will adhere to the same formatting and submission policies as the main conference.</p>
+               
+            <div class="cfp-button-wrapper">
+                <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE" class="cover-scroll-button fancy-button">Submit Your Paper</a>
+              </div>
+        </div>
+    </section>
 
-            <p style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(30, 221, 255, 0.1); border-left: 3px solid rgba(30, 221, 255, 0.744);"><strong>Note for Authors:</strong> New profiles created without an institutional email will go through a moderation process that can take up to two weeks. New profiles created with an institutional email will be activated automatically. Please create your OpenReview profile early to avoid delays.</p>
+    <section id="important-dates" class="section">
+        <div class="container">
+            <h1>Important Deadlines</h1>
+            <div class="wrapper">
+                <ul class="sessions">
+                <li>
+                <div class="time">February 20, 2026</div>
+                <p>Submission Begins</p>
+                </li>
+                <li>
+                <div class="time">March 10, 2026 (AOE)</div>
+                <p>Submission Deadline</p>
+                </li>
+                <li>
+                <div class="time">March 18, 2026</div>
+                <p>Author Notification and Meta-Data Collection</p>
+                </li>
+                <li>
+                <div class="time">March 31, 2026</div>
+                <p>Camera-Ready Submission</p>
+                </li>
+                <li>
+                <div class="time">June 3 / 4, 2026</div>
+                <p>Workshop Day</p>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="schedule" class="section">
+
+        <div id="schedule-section">
+            <!-- The schedule content will be inserted here dynamically -->
+        </div>
+        <div class="container">
+            <h1>Schedule</h1>
+            <p style="text-align: center;">TBD</p>
+            <!-- <div class="table_component" role="region" tabindex="0">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>9:00</td><td>Opening Remarks</td></tr>
+                      <tr><td><strong>9:10</strong></td><td><strong><a href="#bengio">Prof. Yoshua Bengio: Avoiding Catastrophic Risks from Uncontrolled AI Agency</a></strong></td></tr>
+                      <tr><td><strong>9:45</strong></td><td><strong><a href="#tramer">Prof. Florian Tramèr: Negative Progress in Machine Learning Security</a></strong></td></tr>
+                      <tr><td>10:20</td><td>Networking/Coffee Break</td></tr>
+                      <tr><td><strong>10:55</strong></td><td><strong><a href="#gal">Prof. Yarin Gal: Multimodal AI hallucinations, jailbreaks, and beyond: Some recent work and open questions</a></strong></td></tr>
+                      <tr><td>11:30</td><td>Oral Presentation - Safety Without Semantic Disruptions: Editing-free Safe Image Generation via Context-preserving Dual Latent Reconstruction</td></tr>
+                      <tr><td>11:45</td><td>Voxel51 - Sponsored Demo</td></tr>
+                      <tr><td>12:00</td><td>Lunch Break</td></tr>
+                      <tr><td>13:30</td><td>Oral Presentation - FrEVL: Leveraging Frozen Pretrained Embeddings for Efficient Vision-Language Understanding</td></tr>
+                      <tr><td>13:45</td><td>Oral Presentation - Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks</td></tr>
+                      <tr><td>14:00</td><td>Oral Presentation - On the Importance of Conditioning for Privacy-Preserving Data Augmentation</td></tr>
+                      <tr><td><strong>14:15</strong></td><td><strong><a href="#qin">Prof. Yao Qin: TBD</a></strong></td></tr>
+                      <tr><td>14:50</td><td>Oral Presentation - Superimposing 3D-models for Privacy in Videos for Self-Supervised Training</td></tr>
+                      <tr><td>15:05</td><td>Closing Remarks</td></tr>
+                      <tr><td>15:15</td><td>Poster Session & Networking/Coffee Break</td></tr>
+                    </tbody>
+                  </table>
+                  </div>
+               -->
         </div>
     </section>
 
@@ -123,178 +186,126 @@
             <h1>Keynote Speakers</h1>
             <div class="speaker-grid">
                 <div class="committee-member">
-                    <img src="resources/speaker/manling_li.jpg" alt="Manling Li" class="speaker-profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/manling_li.jpg" alt="Manling Li" class="profile-img">
+                    </div>
                     <a href='https://limanling.github.io/'><strong>Manling Li</strong></a> Northwestern University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/speaker/ranjay_krishna.jpg" alt="Ranjay Krishna" class="speaker-profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/ranjay_krishna.jpg" alt="Ranjay Krishna" class="profile-img">
+                    </div>
                     <a href='https://www.ranjaykrishna.com/index.html'><strong>Ranjay Krishna</strong></a> University of Washington
                 </div>
                 <div class="committee-member">
-                    <img src="resources/speaker/sergey_levine.jpg" alt="Sergey Levine" class="speaker-profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/sergey_levine.jpg" alt="Sergey Levine" class="profile-img">
+                    </div>
                     <a href='https://people.eecs.berkeley.edu/~svlevine/'><strong>Sergey Levine</strong></a> UC Berkeley
                 </div>
                 <div class="committee-member">
-                    <img src="resources/speaker/mahmoud_assran.jpg" alt="Mahmoud Assran" class="speaker-profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/mahmoud_assran.jpg" alt="Mahmoud Assran" class="profile-img">
+                    </div>
                     <a href='https://www.midoassran.ca/'><strong>Mahmoud Assran</strong></a> Meta AI
                 </div>
                 <div class="committee-member">
-                    <img src="resources/speaker/haoqi_fan.jpg" alt="Haoqi Fan" class="speaker-profile-img contain-fit">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/haoqi_fan.jpg" alt="Haoqi Fan" class="profile-img">
+                    </div>
                     <a href='https://haoqifan.github.io/'><strong>Haoqi Fan</strong></a> TikTok
                 </div>
                 <div class="committee-member">
-                    <img src="resources/speaker/ziwei_liu.png" alt="Ziwei Liu" class="speaker-profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/speaker/ziwei_liu.png" alt="Ziwei Liu" class="profile-img">
+                    </div>
                     <a href='https://liuziwei7.github.io/'><strong>Ziwei Liu</strong></a> Nanyang Technological University
                 </div>
             </div>
         </div>
     </section>
 
-    
-
-    <section id="schedule" class="section">
-        <div class="container">
-            <h1>Schedule</h1>
-            <p style="text-align: center; font-size: 1.2em; margin-top: 2rem;">To Be Announced</p>
-            <p style="text-align: center; color: rgba(30, 221, 255, 0.744); margin-top: 1rem;">The detailed workshop schedule will be available closer to the event.</p>
-        </div>
-    </section>
-
-
-    <section id="important-dates" class="section">
-        <div class="container">
-            <h1>Important Dates</h1>
-            <!-- <ul>
-                <li><strong>Submission Deadline:</strong> March 15, 2025</li>
-                <li><strong>Notification of Acceptance:</strong> March 25, 2025</li>
-                <li><strong>Camera-Ready Submission:</strong> April 5, 2025</li>
-                <li><strong>Workshop Date:</strong> June 18, 2025</li>
-            </ul> -->
-
-                <div class="timeline">
-                    <div class="step">
-                        <div class="date">February 1, 2026</div>
-                        <div class="timestamp">
-                            <span> </span>
-                        </div>
-                        <div class="label">Submission Open</div>
-                    </div>
-                    <div class="step">
-                        <div class="date">March 10, 2026 (AoE)</div>
-                        <div class="timestamp">
-                            <span></span>
-                        </div>
-                        <div class="label">Submission Deadline</div>
-                    </div>
-                    <div class="step">
-                        <div class="date">March 18, 2026</div>
-                        <div class="timestamp">
-                            <span></span>
-                        </div>
-                        <div class="label">Decision Notification</div>
-                    </div>
-                    <div class="step">
-                        <div class="date">April 7, 2026</div>
-                        <div class="timestamp">
-                            <span></span>
-                        </div>
-                        <div class="label">Camera-Ready Submission</div>
-                    </div>
-                    <div class="step">
-                        <div class="date">June 3 or 4, 2026</div>
-                        <div class="timestamp">
-                            <span></span>
-                        </div>
-                        <div class="label">Workshop Date</div>
-                    </div>
-                </div>
-        </div>
-    </section>
-
-
-    <!-- Accepted Papers section will be added after paper acceptance
-    <section id="papers" class="section">
-        <div class="container">
-            <h1>Accepted Papers</h1>
-            <p>We hereby list the papers accepted to our workshop.</p>
-            <ul>
-                <li>TBA</li>
-            </ul>
-        </div>
-    </section>
-    -->
-
     <section id="committee" class="section">
         <div class="container">
             <h1>Organizers</h1>
             <div class="committee-grid">
                 <div class="committee-member">
-                    <img src="resources/committee/yinpeng.jpeg" alt="Yinpeng Dong" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/yinpeng.jpeg" alt="Yinpeng Dong" class="profile-img">
+                    </div>
                     <a href='https://dongyp13.github.io'><strong>Yinpeng Dong</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/yichi-zhang.jpg" alt="Yichi Zhang" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/yichi-zhang.jpg" alt="Yichi Zhang" class="profile-img">
+                    </div>
                     <a href='https://zycheiheihei.github.io'><strong>Yichi Zhang</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/yuhuang.jpg" alt="Yu Huang" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/yuhuang.jpg" alt="Yu Huang" class="profile-img">
+                    </div>
                     <a href='https://github.com/Uranusxer'><strong>Yu Huang</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/shilong_liu.jpg" alt="Shilong Liu" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/shilong_liu.jpg" alt="Shilong Liu" class="profile-img">
+                    </div>
                     <a href='https://lsl.zone/'><strong>Shilong Liu</strong></a> Princeton University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/CihangXie.jpg" alt="Cihang Xie" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/CihangXie.jpg" alt="Cihang Xie" class="profile-img">
+                    </div>
                     <a href='https://cihangxie.github.io'><strong>Cihang Xie</strong></a> U.C., Santa Cruz
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/xueyan.jpeg" alt="Xueyan Zou" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/xueyan.jpeg" alt="Xueyan Zou" class="profile-img">
+                    </div>
                     <a href='https://maureenzou.github.io/'><strong>Xueyan Zou</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/miao_liu.jpg" alt="Miao Liu" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/miao_liu.jpg" alt="Miao Liu" class="profile-img">
+                    </div>
                     <a href='https://aptx4869lm.github.io/'><strong>Miao Liu</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/hangsu.jpeg" alt="Hang Su" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/hangsu.jpeg" alt="Hang Su" class="profile-img">
+                    </div>
                     <a href='https://www.suhangss.me'><strong>Hang Su</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/junzhu.jpg" alt="Jun Zhu" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/junzhu.jpg" alt="Jun Zhu" class="profile-img">
+                    </div>
                     <a href='https://ml.cs.tsinghua.edu.cn/~jun/index.shtml'><strong>Jun Zhu</strong></a> Tsinghua University
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/shanshiguang.jpeg" alt="Shiguang Shan" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/shanshiguang.jpeg" alt="Shiguang Shan" class="profile-img">
+                    </div>
                     <a href='https://vipl.ict.ac.cn/people/_sgshan/'><strong>Shiguang Shan</strong></a> Chinese Academy of Sciences
                 </div>
                 <div class="committee-member">
-                    <img src="resources/committee/shuicheng.png" alt="Shuicheng Yan" class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="resources/committee/shuicheng.png" alt="Shuicheng Yan" class="profile-img">
+                    </div>
                     <a href='https://yanshuicheng.info/'><strong>Shuicheng Yan</strong></a> National University of Singapore
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sponsors" class="section">
-        <div class="container">
-            <h1>Sponsors</h1>
-            <p>We are sincerely grateful for the support from all our sponsors.</p>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-top: 3vh; background-color: #fff; padding: 20px; border-radius: 10px;">
-                <img src="resources/sponsor/bosch.png" alt="Bosch" style="height: 80px; width: auto;">
-                <img src="resources/sponsor/jiqizhixin.png" alt="机器之心 Synced" style="height: 80px; width: auto;">
-            </div>
-        </div>
-    </section>
-
-
     <!-- Past Editions Section -->
     <section id="past-editions" class="section">
         <div class="container">
             <h1>Past Editions</h1>
-            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">Explore previous workshops and their contributions to the field</p>
+            <p style="text-align: center; margin-bottom: 2rem;">Explore previous workshops and their contributions to the field</p>
             <div class="past-editions-grid-3d">
-                <div class="edition-card-3d" onclick="window.location.href='/cvpr2025/'" data-tilt>
+                <div class="edition-card-3d" onclick="window.location.href='cvpr2025/'" data-tilt>
                     <div class="card-glow"></div>
                     <div class="card-border"></div>
                     <div class="card-content">
@@ -339,7 +350,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="/cvpr2025/" class="edition-link-3d" onclick="event.stopPropagation();">
+                            <a href="cvpr2025/" class="edition-link-3d" onclick="event.stopPropagation();">
                                 <span>Explore Workshop</span>
                                 <div class="link-icon">
                                     <i class="fa fa-arrow-right"></i>
@@ -349,17 +360,49 @@
                     </div>
                     <div class="card-reflection"></div>
                 </div>
-                <!-- 未来可以继续添加更多历史版本 -->
             </div>
         </div>
     </section>
+    
 
     <section id="contact" class="section">
         <div class="container">
             <h1>Contact</h1>
-            <p>For any inquiries, please contact the official email: <a href="mailto:viscalecvpr@gmail.com">viscalecvpr@gmail.com</a> or our organizers, Yinpeng Dong: <a href="mailto:dongyinpeng@mail.tsinghua.edu.cn">dongyinpeng@mail.tsinghua.edu.cn</a> and Yichi Zhang: <a href="mailto:zyc22@mails.tsinghua.edu.cn">zyc22@mails.tsinghua.edu.cn</a></p>
+            <!-- <p>
+              Stay up to date by following us on 
+              <i class="fa fa-twitter" aria-hidden="true" style="color:#1DA1F2;"></i>
+              <a href="https://x.com/SaFeMMAI">@SaFeMMAI</a>.
+            </p> -->
+            <p><i class="fa fa-envelope" aria-hidden="true" style="color:#FF5E3A; margin-right: 0.4em;"></i>For any inquiries, feel free to reach out to us via email at: <a href="mailto:viscalecvpr@gmail.com">viscalecvpr@gmail.com.</a> or You may also contact the organizers directly: <a href="mailto:dongyinpeng@mail.tsinghua.edu.cn">Yinpeng Dong</a>, <a href="mailto:zyc22@mails.tsinghua.edu.cn">Yichi Zhang</a>.</p>
         </div>
     </section>
+
+    <section id="sponsorship" class="section">
+        <div class="container">
+            <h1>Sponsors</h1>
+            <p>We sincerely thank our sponsors for their generous support of the ViSCALE workshop at CVPR 2026.</p>
+            <div class="sponsors-logo-row">
+                <a href="https://www.bosch.com/research/bcai/"
+                   class="sponsors__logo"
+                   target="_blank" rel="noopener">
+                    <img src="resources/sponsor/bosch.png"
+                         alt="Bosch logo"
+                         width="160" height="48"
+                         loading="lazy">
+                </a>
+                <a href="https://www.jiqizhixin.com/"
+                   class="sponsors__logo"
+                   target="_blank" rel="noopener">
+                    <img src="resources/sponsor/jiqizhixin.png"
+                         alt="Jiqizhixin logo"
+                         width="160" height="48"
+                         loading="lazy">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
 
     <footer>
         <div class="container">
@@ -372,9 +415,11 @@
 
 <script>
 
-// Mobile menu toggle functions
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction(event) {
+    event.stopPropagation();
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function Close() {
@@ -402,6 +447,88 @@ window.onclick = function(event) {
   }
 }
 
+
+function showTab(button, tabKey) {
+  const card = button.closest('.speaker-card');
+
+  const buttons = card.querySelectorAll('.tab-button');
+  const contents = card.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+
+  button.classList.add('active');
+  card.querySelector(`.tab-content[data-tab="${tabKey}"]`).classList.add('active');
+}
+
+// Load and render accepted papers from CSV
+async function loadAcceptedPapers() {
+  console.log("hello")
+  const response = await fetch('./resources/accepted_papers.json');
+  const accepted = await response.json()
+  const papersList = document.getElementById('papers-list');
+
+  const posterList = [
+    "HalluSegBench_SafeMMAI_Poster.pdf",
+    "Navtrust_Safemmai_poster.pdf",
+    "pulling_back_the_courtain.pdf",
+    "Revisiting_Safemmai_poster.pdf",
+    "SIFT-Graph_safemmai_poser.pdf",
+    "Get_RICH_Poster_Landscape.pdf"
+  ];
+
+  accepted.forEach((pub, index) => {
+    const number = pub.number;
+    const type = pub.type;
+    const title = pub.title;
+    const authors = pub.authors;
+    const abstract = pub.abstract;
+
+    console.log(title)
+
+    const match = posterList.find(p =>
+      title.toLowerCase().startsWith(p.toLowerCase().split('_')[0])
+    );
+
+    console.log(match)
+
+    const posterLink = match
+      ? `<p><a href="./resources/posters/${match}" target="_blank" class="poster-link">📄 View Poster</a></p>`
+      : "";
+
+    const item = document.createElement('div');
+    item.classList.add('paper-item');
+    item.innerHTML = `
+      <div class="paper-header">
+        <div class="paper-title">${title}</div>
+        <div class="paper-type">${type.toUpperCase()}</div>
+    </div>
+      <div class="paper-details">
+        <p><strong>Authors:</strong> ${authors}</p>
+        <p><strong>Abstract:</strong> ${abstract}</p>
+        ${posterLink}
+      </div>
+    `;
+    item.addEventListener('click', () => {
+    const details = item.querySelector('.paper-details');
+    const isOpen = item.classList.toggle('open');
+
+    if (isOpen) {
+        details.style.maxHeight = details.scrollHeight + 'px';
+    } else {
+        details.style.maxHeight = null;
+    }
+    });
+    papersList.appendChild(item);
+  });
+}
+
+window.onload = function() {
+    loadAcceptedPapers();
+
+};
+
+
 // 3D Tilt Effect for Past Editions Cards
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.edition-card-3d[data-tilt]');
@@ -410,33 +537,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const content = card.querySelector('.card-content');
         const layers = card.querySelectorAll('.card-layer');
 
-        // Mouse move handler for 3D tilt
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const cardCenterX = rect.left + rect.width / 2;
             const cardCenterY = rect.top + rect.height / 2;
-
-            // Calculate rotation based on mouse position
             const mouseX = e.clientX - cardCenterX;
             const mouseY = e.clientY - cardCenterY;
-
-            // Normalize to -1 to 1 range
             const normalizedX = mouseX / (rect.width / 2);
             const normalizedY = mouseY / (rect.height / 2);
-
-            // Apply rotation (max 15 degrees)
             const rotateY = normalizedX * 15;
             const rotateX = -normalizedY * 15;
 
-            // Apply main card transform
             card.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
 
-            // Apply parallax to layers
-            layers.forEach((layer, index) => {
-                const depth = (index - 1) * 15; // Different depth for each layer
-                const translateX = normalizedX * depth;
-                const translateY = normalizedY * depth;
-
+            layers.forEach((layer) => {
+                const translateX = normalizedX * 15;
+                const translateY = normalizedY * 15;
                 if (layer.classList.contains('layer-back')) {
                     layer.style.transform = `translateZ(-30px) scale(1.06) translate(${translateX * -0.5}px, ${translateY * -0.5}px)`;
                 } else if (layer.classList.contains('layer-front')) {
@@ -444,7 +560,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Dynamic shine/highlight effect based on mouse position
             const shineX = ((e.clientX - rect.left) / rect.width) * 100;
             const shineY = ((e.clientY - rect.top) / rect.height) * 100;
             content.style.background = `
@@ -453,11 +568,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
 
-        // Mouse leave - reset transforms
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
             card.style.transition = 'transform 0.5s ease-out';
-
             layers.forEach(layer => {
                 layer.style.transition = 'transform 0.5s ease-out';
                 if (layer.classList.contains('layer-back')) {
@@ -468,11 +581,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     layer.style.transform = 'translateZ(0)';
                 }
             });
-
             content.style.background = 'linear-gradient(165deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)';
         });
 
-        // Mouse enter - enable fast transitions
         card.addEventListener('mouseenter', () => {
             card.style.transition = 'transform 0.1s ease-out';
             layers.forEach(layer => {
@@ -481,5 +592,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 </script>

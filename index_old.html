@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test-time Scaling for Computer Vision Workshop at CVPR2026">
+    <title>Test-time Scaling for Computer Vision (ViSCALE) Workshop - CVPR2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="resources/favicon-black.png" type="image/png">
+</head>
+<body>
+    <!--
+    <header>
+        <div class="container">
+            <h1>Test-time Scaling for Computer Vision (ViSCALE) Workshop</h1>
+            <p>CVPR2025 | Nashville, USA</p>
+        </div>
+    </header>-->
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container" style="width: 95%;">
+            <div class="logo-title">
+                <img src="resources/favicon-new-updated.png" alt="Logo" class="logo">
+                <h3 class="title">CVPR2026 ViSCALE Workshop</h3>
+            </div>
+
+            <div class="navlist">
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#call-for-papers">Call for Papers</a></li>
+                    <li><a href="#important-dates">Important Dates</a></li>
+                    <li><a href="#speaker">Speakers</a></li>
+                    <li><a href="#committee">Organizers</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#past-editions">Past Editions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <li><a href="#introduction" onclick="Close()">Introduction</a></li>
+                    <li><a href="#call-for-papers" onclick="Close()">Call for Papers</a></li>
+                    <li><a href="#important-dates" onclick="Close()">Important Dates</a></li>
+                    <li><a href="#speaker" onclick="Close()">Speakers</a></li>
+                    <li><a href="#committee" onclick="Close()">Organizers</a></li>
+                    <li><a href="#schedule" onclick="Close()">Schedule</a></li>
+                    <li><a href="#sponsors" onclick="Close()">Sponsors</a></li>
+                    <li><a href="#past-editions" onclick="Close()">Past Editions</a></li>
+                    <li><a href="#contact" onclick="Close()">Contact</a></li>
+                </div>
+              </div>
+
+        </div>
+    </nav>
+
+    <!-- Cover image with title -->
+    <section class="cover">
+        <img src="resources/new-cover.png" alt="Cover Image" class="cover-image">
+        <div class="cover-text">
+            <p class="cover-subtitle">2nd ViSCALE Workshop @ CVPR2026</p>
+            <h1>Test-time Scaling <br> for Computer Vision</h1>
+            <p class="cover-location">June 3rd or 4th, 2026 (Half Day)<br>Colorado Convention Center, Denver CO, USA</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="introduction" class="section">
+        <div class="container">
+            <h1>Introduction</h1>
+            <p>Test-time scaling, which has shown remarkable success in improving reasoning for large language models, holds significant promise for computer vision and multimodal systems. By allocating additional computation during inference, vision models can enhance accuracy, robustness, and interpretability in complex reasoning tasks. Recent advances in the “thinking with images” paradigm, where models perform visual chain-of-thought reasoning through iterative perception and synthesis, suggest a shift toward visually grounded cognition rather than purely symbolic inference. Extending test-time scaling to this setting could enable adaptive visual reasoning, where models selectively focus computation on ambiguous or conceptually rich regions. Coupled with emerging trends such as multimodal reflection, self-evaluation, and scalable visual generation, this approach paves the way for more general, controllable, and interpretable vision reasoning systems. However, scaling inference on high-dimensional visual inputs remains computationally expensive, efficient allocation of resources is still an open problem, and ensuring robustness, safety, and energy efficiency under expanded test-time computation poses significant challenges.</p>
+
+            <p style="margin-top: 1rem;">The <strong>2nd Workshop on Test-time Scaling for Computer Vision (ViSCALE)</strong> aims to explore the frontiers of scaling test-time computation in vision models, addressing both theoretical advancements and practical implementations. We will discuss the suitability of test-time scaling for traditional vision tasks like perception and the extensions to multimodal and generative models, towards enhancing performance in critical domains. It will also cover solutions for efficient algorithms, considerations of robustness and safety, and novel problems in computer vision posed by test-time scaling. By bringing together experts, the workshop seeks to foster collaboration and innovation in applying this paradigm to push the limits of computer vision.</p>
+        </div>
+    </section>
+
+    <section id="call-for-papers" class="section">
+        <div class="container">
+            <h1>Call for Papers</h1>
+            <p>We invite submissions of original research papers, work-in-progress papers, and extended abstracts.</p>
+
+            <h3 style="margin-top: 2rem; color: rgba(30, 221, 255, 0.744);">Topics of Interest</h3>
+            <p style="margin-top: 0.5rem;">We welcome original research contributions on topics including, but not limited to:</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                <li>Theoretical analysis of test-time scaling in computer vision</li>
+                <li>Test-time scaling for high-level visual reasoning (e.g., spatial reasoning, planning)</li>
+                <li>Extensions to Multimodal Foundation Models and World Models</li>
+                <li>Efficient algorithms for inference-time scaling</li>
+                <li>Trustworthiness, robustness, and safety in scaled vision models</li>
+                <li>Benchmarks and evaluations for test-time scaling techniques</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; color: rgba(30, 221, 255, 0.744);">Submission Guidelines</h3>
+            <p style="margin-top: 0.5rem;">All submissions will be handled via <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE" target="_blank" style="color: rgba(30, 221, 255, 0.744);">OpenReview</a>. The review process is double-blind.</p>
+
+            <h4 style="margin-top: 1.5rem; color: rgba(255, 180, 50, 0.9);">Track 1: Full Papers (Proceedings Track / Archival)</h4>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                <li><strong>Length:</strong> 8 pages (excluding references)</li>
+                <li><strong>Description:</strong> Accepted papers will be published in the CVPR 2026 Workshop Proceedings and IEEE Xplore.</li>
+                <li><strong>Format:</strong> <a href="https://github.com/cvpr-org/author-kit" target="_blank" style="color: rgba(30, 221, 255, 0.744);">CVPR 2026 Author Kit</a> (Double-blind)</li>
+            </ul>
+
+            <h4 style="margin-top: 1.5rem; color: rgba(255, 180, 50, 0.9);">Track 2: Extended Abstracts (Non-Archival)</h4>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                <li><strong>Length:</strong> Up to 4 pages (excluding references)</li>
+                <li><strong>Description:</strong> Best for preliminary work or works already published elsewhere. These will NOT appear in the proceedings.</li>
+                <li><strong>Format:</strong> <a href="https://github.com/cvpr-org/author-kit" target="_blank" style="color: rgba(30, 221, 255, 0.744);">CVPR 2026 Author Kit</a></li>
+            </ul>
+
+            <p style="margin-top: 1.5rem;"><strong>Submit your paper:</strong> <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/ViSCALE" target="_blank" style="color: rgba(30, 221, 255, 0.744);">OpenReview Submission Portal</a></p>
+
+            <p style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(30, 221, 255, 0.1); border-left: 3px solid rgba(30, 221, 255, 0.744);"><strong>Note for Authors:</strong> New profiles created without an institutional email will go through a moderation process that can take up to two weeks. New profiles created with an institutional email will be activated automatically. Please create your OpenReview profile early to avoid delays.</p>
+        </div>
+    </section>
+
+    <section id="speaker" class="section">
+        <div class="container">
+            <h1>Keynote Speakers</h1>
+            <div class="speaker-grid">
+                <div class="committee-member">
+                    <img src="resources/speaker/manling_li.jpg" alt="Manling Li" class="speaker-profile-img">
+                    <a href='https://limanling.github.io/'><strong>Manling Li</strong></a> Northwestern University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/ranjay_krishna.jpg" alt="Ranjay Krishna" class="speaker-profile-img">
+                    <a href='https://www.ranjaykrishna.com/index.html'><strong>Ranjay Krishna</strong></a> University of Washington
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/sergey_levine.jpg" alt="Sergey Levine" class="speaker-profile-img">
+                    <a href='https://people.eecs.berkeley.edu/~svlevine/'><strong>Sergey Levine</strong></a> UC Berkeley
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/mahmoud_assran.jpg" alt="Mahmoud Assran" class="speaker-profile-img">
+                    <a href='https://www.midoassran.ca/'><strong>Mahmoud Assran</strong></a> Meta AI
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/haoqi_fan.jpg" alt="Haoqi Fan" class="speaker-profile-img contain-fit">
+                    <a href='https://haoqifan.github.io/'><strong>Haoqi Fan</strong></a> TikTok
+                </div>
+                <div class="committee-member">
+                    <img src="resources/speaker/ziwei_liu.png" alt="Ziwei Liu" class="speaker-profile-img">
+                    <a href='https://liuziwei7.github.io/'><strong>Ziwei Liu</strong></a> Nanyang Technological University
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="schedule" class="section">
+        <div class="container">
+            <h1>Schedule</h1>
+            <p style="text-align: center; font-size: 1.2em; margin-top: 2rem;">To Be Announced</p>
+            <p style="text-align: center; color: rgba(30, 221, 255, 0.744); margin-top: 1rem;">The detailed workshop schedule will be available closer to the event.</p>
+        </div>
+    </section>
+
+
+    <section id="important-dates" class="section">
+        <div class="container">
+            <h1>Important Dates</h1>
+            <!-- <ul>
+                <li><strong>Submission Deadline:</strong> March 15, 2025</li>
+                <li><strong>Notification of Acceptance:</strong> March 25, 2025</li>
+                <li><strong>Camera-Ready Submission:</strong> April 5, 2025</li>
+                <li><strong>Workshop Date:</strong> June 18, 2025</li>
+            </ul> -->
+
+                <div class="timeline">
+                    <div class="step">
+                        <div class="date">February 1, 2026</div>
+                        <div class="timestamp">
+                            <span> </span>
+                        </div>
+                        <div class="label">Submission Open</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">March 10, 2026 (AoE)</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Submission Deadline</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">March 18, 2026</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Decision Notification</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">April 7, 2026</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Camera-Ready Submission</div>
+                    </div>
+                    <div class="step">
+                        <div class="date">June 3 or 4, 2026</div>
+                        <div class="timestamp">
+                            <span></span>
+                        </div>
+                        <div class="label">Workshop Date</div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+
+    <!-- Accepted Papers section will be added after paper acceptance
+    <section id="papers" class="section">
+        <div class="container">
+            <h1>Accepted Papers</h1>
+            <p>We hereby list the papers accepted to our workshop.</p>
+            <ul>
+                <li>TBA</li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+    <section id="committee" class="section">
+        <div class="container">
+            <h1>Organizers</h1>
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <img src="resources/committee/yinpeng.jpeg" alt="Yinpeng Dong" class="profile-img">
+                    <a href='https://dongyp13.github.io'><strong>Yinpeng Dong</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/yichi-zhang.jpg" alt="Yichi Zhang" class="profile-img">
+                    <a href='https://zycheiheihei.github.io'><strong>Yichi Zhang</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/yuhuang.jpg" alt="Yu Huang" class="profile-img">
+                    <a href='https://github.com/Uranusxer'><strong>Yu Huang</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/shilong_liu.jpg" alt="Shilong Liu" class="profile-img">
+                    <a href='https://lsl.zone/'><strong>Shilong Liu</strong></a> Princeton University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/CihangXie.jpg" alt="Cihang Xie" class="profile-img">
+                    <a href='https://cihangxie.github.io'><strong>Cihang Xie</strong></a> U.C., Santa Cruz
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/xueyan.jpeg" alt="Xueyan Zou" class="profile-img">
+                    <a href='https://maureenzou.github.io/'><strong>Xueyan Zou</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/miao_liu.jpg" alt="Miao Liu" class="profile-img">
+                    <a href='https://aptx4869lm.github.io/'><strong>Miao Liu</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/hangsu.jpeg" alt="Hang Su" class="profile-img">
+                    <a href='https://www.suhangss.me'><strong>Hang Su</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/junzhu.jpg" alt="Jun Zhu" class="profile-img">
+                    <a href='https://ml.cs.tsinghua.edu.cn/~jun/index.shtml'><strong>Jun Zhu</strong></a> Tsinghua University
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/shanshiguang.jpeg" alt="Shiguang Shan" class="profile-img">
+                    <a href='https://vipl.ict.ac.cn/people/_sgshan/'><strong>Shiguang Shan</strong></a> Chinese Academy of Sciences
+                </div>
+                <div class="committee-member">
+                    <img src="resources/committee/shuicheng.png" alt="Shuicheng Yan" class="profile-img">
+                    <a href='https://yanshuicheng.info/'><strong>Shuicheng Yan</strong></a> National University of Singapore
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="section">
+        <div class="container">
+            <h1>Sponsors</h1>
+            <p>We are sincerely grateful for the support from all our sponsors.</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-top: 3vh; background-color: #fff; padding: 20px; border-radius: 10px;">
+                <img src="resources/sponsor/bosch.png" alt="Bosch" style="height: 80px; width: auto;">
+                <img src="resources/sponsor/jiqizhixin.png" alt="机器之心 Synced" style="height: 80px; width: auto;">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Past Editions Section -->
+    <section id="past-editions" class="section">
+        <div class="container">
+            <h1>Past Editions</h1>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">Explore previous workshops and their contributions to the field</p>
+            <div class="past-editions-grid-3d">
+                <div class="edition-card-3d" onclick="window.location.href='/cvpr2025/'" data-tilt>
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-layer layer-back">
+                            <div class="floating-particles">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="card-layer layer-base">
+                            <div class="edition-header-3d">
+                                <div class="edition-badge-3d">1st Edition</div>
+                                <div class="edition-status-3d">
+                                    <span class="status-dot"></span>
+                                    Completed
+                                </div>
+                            </div>
+                            <div class="edition-year-3d">2025</div>
+                            <div class="edition-title-3d">ViSCALE Workshop</div>
+                            <p class="edition-info-3d">Test-time Scaling for Computer Vision</p>
+                        </div>
+                        <div class="card-layer layer-front">
+                            <div class="edition-details-3d">
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-calendar"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Date</span>
+                                        <span class="detail-value">June 12, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-map-marker"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Location</span>
+                                        <span class="detail-value">Nashville, TN, USA</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item-3d">
+                                    <div class="detail-icon"><i class="fa fa-building"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Conference</span>
+                                        <span class="detail-value">CVPR 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/cvpr2025/" class="edition-link-3d" onclick="event.stopPropagation();">
+                                <span>Explore Workshop</span>
+                                <div class="link-icon">
+                                    <i class="fa fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-reflection"></div>
+                </div>
+                <!-- 未来可以继续添加更多历史版本 -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h1>Contact</h1>
+            <p>For any inquiries, please contact the official email: <a href="mailto:viscalecvpr@gmail.com">viscalecvpr@gmail.com</a> or our organizers, Yinpeng Dong: <a href="mailto:dongyinpeng@mail.tsinghua.edu.cn">dongyinpeng@mail.tsinghua.edu.cn</a> and Yichi Zhang: <a href="mailto:zyc22@mails.tsinghua.edu.cn">zyc22@mails.tsinghua.edu.cn</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ViSCALE Workshop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+// Mobile menu toggle functions
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function Close() {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+// 3D Tilt Effect for Past Editions Cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.edition-card-3d[data-tilt]');
+
+    cards.forEach(card => {
+        const content = card.querySelector('.card-content');
+        const layers = card.querySelectorAll('.card-layer');
+
+        // Mouse move handler for 3D tilt
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const cardCenterX = rect.left + rect.width / 2;
+            const cardCenterY = rect.top + rect.height / 2;
+
+            // Calculate rotation based on mouse position
+            const mouseX = e.clientX - cardCenterX;
+            const mouseY = e.clientY - cardCenterY;
+
+            // Normalize to -1 to 1 range
+            const normalizedX = mouseX / (rect.width / 2);
+            const normalizedY = mouseY / (rect.height / 2);
+
+            // Apply rotation (max 15 degrees)
+            const rotateY = normalizedX * 15;
+            const rotateX = -normalizedY * 15;
+
+            // Apply main card transform
+            card.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+            // Apply parallax to layers
+            layers.forEach((layer, index) => {
+                const depth = (index - 1) * 15; // Different depth for each layer
+                const translateX = normalizedX * depth;
+                const translateY = normalizedY * depth;
+
+                if (layer.classList.contains('layer-back')) {
+                    layer.style.transform = `translateZ(-30px) scale(1.06) translate(${translateX * -0.5}px, ${translateY * -0.5}px)`;
+                } else if (layer.classList.contains('layer-front')) {
+                    layer.style.transform = `translateZ(40px) translate(${translateX}px, ${translateY}px)`;
+                }
+            });
+
+            // Dynamic shine/highlight effect based on mouse position
+            const shineX = ((e.clientX - rect.left) / rect.width) * 100;
+            const shineY = ((e.clientY - rect.top) / rect.height) * 100;
+            content.style.background = `
+                radial-gradient(circle at ${shineX}% ${shineY}%, rgba(30, 221, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(165deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)
+            `;
+        });
+
+        // Mouse leave - reset transforms
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.5s ease-out';
+
+            layers.forEach(layer => {
+                layer.style.transition = 'transform 0.5s ease-out';
+                if (layer.classList.contains('layer-back')) {
+                    layer.style.transform = 'translateZ(-30px) scale(1.06)';
+                } else if (layer.classList.contains('layer-front')) {
+                    layer.style.transform = 'translateZ(40px)';
+                } else {
+                    layer.style.transform = 'translateZ(0)';
+                }
+            });
+
+            content.style.background = 'linear-gradient(165deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)';
+        });
+
+        // Mouse enter - enable fast transitions
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease-out';
+            layers.forEach(layer => {
+                layer.style.transition = 'transform 0.1s ease-out';
+            });
+        });
+    });
+});
+
+</script>
