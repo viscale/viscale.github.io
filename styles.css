@@ -386,6 +386,65 @@ margin-top:0.4rem;
 }
 }
 
+/* Schedule styles */
+.schedule-timezone-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.schedule-timezone-control label {
+    font-weight: bold;
+}
+
+.timezone-select {
+    padding: 0.4rem 0.6rem;
+    background-color: #333;
+    color: #fff;
+    border: 0.1rem solid rgba(10, 1, 135, 0.35);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.schedule-table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 0.1rem solid #dededf;
+    padding: 0.45rem 0.8rem;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #d4d4d4;
+    color: #000;
+    font-weight: bold;
+}
+
+.schedule-table td {
+    color: #000;
+}
+
+.schedule-table tr:nth-child(even) td {
+    background-color: #eceff1;
+}
+
+.schedule-table tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
 
 .table_component {
     overflow: auto;

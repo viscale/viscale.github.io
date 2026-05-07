@@ -144,40 +144,83 @@
 
     <section id="schedule" class="section">
 
-        <div id="schedule-section">
-            <!-- The schedule content will be inserted here dynamically -->
-        </div>
         <div class="container">
             <h1>Schedule</h1>
-            <p style="text-align: center;">TBD</p>
-            <!-- <div class="table_component" role="region" tabindex="0">
-                <table>
+            <div class="schedule-timezone-control">
+                <label for="timezone">Select Time Zone:</label>
+                <select id="timezone" class="timezone-select" onchange="updateSchedule()">
+                    <option value="America/Denver" selected>Denver (UTC-6)</option>
+                    <option value="America/New_York">New York (UTC-4)</option>
+                    <option value="America/Los_Angeles">Los Angeles (UTC-7)</option>
+                    <option value="Europe/London">London (UTC+1)</option>
+                    <option value="Europe/Rome">Rome (UTC+2)</option>
+                    <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                    <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+                    <option value="Australia/Sydney">Sydney (UTC+11)</option>
+                </select>
+            </div>
+
+            <div class="schedule-table-wrapper">
+                <table id="schedule" class="schedule-table">
                     <thead>
-                      <tr>
-                        <th>Time</th>
-                        <th>Event</th>
-                      </tr>
+                        <tr>
+                            <th>Session</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr><td>9:00</td><td>Opening Remarks</td></tr>
-                      <tr><td><strong>9:10</strong></td><td><strong><a href="#bengio">Prof. Yoshua Bengio: Avoiding Catastrophic Risks from Uncontrolled AI Agency</a></strong></td></tr>
-                      <tr><td><strong>9:45</strong></td><td><strong><a href="#tramer">Prof. Florian Tramèr: Negative Progress in Machine Learning Security</a></strong></td></tr>
-                      <tr><td>10:20</td><td>Networking/Coffee Break</td></tr>
-                      <tr><td><strong>10:55</strong></td><td><strong><a href="#gal">Prof. Yarin Gal: Multimodal AI hallucinations, jailbreaks, and beyond: Some recent work and open questions</a></strong></td></tr>
-                      <tr><td>11:30</td><td>Oral Presentation - Safety Without Semantic Disruptions: Editing-free Safe Image Generation via Context-preserving Dual Latent Reconstruction</td></tr>
-                      <tr><td>11:45</td><td>Voxel51 - Sponsored Demo</td></tr>
-                      <tr><td>12:00</td><td>Lunch Break</td></tr>
-                      <tr><td>13:30</td><td>Oral Presentation - FrEVL: Leveraging Frozen Pretrained Embeddings for Efficient Vision-Language Understanding</td></tr>
-                      <tr><td>13:45</td><td>Oral Presentation - Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks</td></tr>
-                      <tr><td>14:00</td><td>Oral Presentation - On the Importance of Conditioning for Privacy-Preserving Data Augmentation</td></tr>
-                      <tr><td><strong>14:15</strong></td><td><strong><a href="#qin">Prof. Yao Qin: TBD</a></strong></td></tr>
-                      <tr><td>14:50</td><td>Oral Presentation - Superimposing 3D-models for Privacy in Videos for Self-Supervised Training</td></tr>
-                      <tr><td>15:05</td><td>Closing Remarks</td></tr>
-                      <tr><td>15:15</td><td>Poster Session & Networking/Coffee Break</td></tr>
+                        <tr>
+                            <td>Opening Remarks</td>
+                            <td id="time1">09:00 AM</td><td id="time2">09:05 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Manling Li</td>
+                            <td id="time3">09:05 AM</td><td id="time4">09:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Ranjay Krishna</td>
+                            <td id="time5">09:30 AM</td><td id="time6">09:55 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Sergey Levine</td>
+                            <td id="time7">09:55 AM</td><td id="time8">10:20 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Coffee Break</td>
+                            <td id="time9">10:20 AM</td><td id="time10">10:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Mahmoud Assran</td>
+                            <td id="time11">10:30 AM</td><td id="time12">10:55 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Haoqi Fan</td>
+                            <td id="time13">10:55 AM</td><td id="time14">11:20 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Invited Talk by Ziwei Liu</td>
+                            <td id="time15">11:20 AM</td><td id="time16">11:45 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Oral Talk: TreeReasoner: Reinforcing Tool-Augmented Tree-of-Videos Reasoning</td>
+                            <td id="time17">11:45 AM</td><td id="time18">11:55 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Oral Talk: Learning from Trials and Errors: Reflective Test-Time Planning for Embodied LLMs</td>
+                            <td id="time19">11:55 AM</td><td id="time20">12:05 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Oral Talk: Mind over Space: Can Multimodal Large Language Models Mentally Navigate?</td>
+                            <td id="time21">12:05 PM</td><td id="time22">12:15 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Closing Remarks</td>
+                            <td id="time23">12:15 PM</td><td id="time24">12:20 PM</td>
+                        </tr>
                     </tbody>
-                  </table>
-                  </div>
-               -->
+                </table>
+            </div>
         </div>
     </section>
 
@@ -432,6 +475,59 @@
 </html>
 
 <script>
+
+// Schedule times are stored in UTC and displayed in the selected timezone.
+const events = [
+  { name: 'Opening Remarks start', timeUTC: '2026-06-03T15:00:00Z' },
+  { name: 'Opening Remarks end', timeUTC: '2026-06-03T15:05:00Z' },
+  { name: 'Invited Talk 1 start', timeUTC: '2026-06-03T15:05:00Z' },
+  { name: 'Invited Talk 1 end', timeUTC: '2026-06-03T15:30:00Z' },
+  { name: 'Invited Talk 2 start', timeUTC: '2026-06-03T15:30:00Z' },
+  { name: 'Invited Talk 2 end', timeUTC: '2026-06-03T15:55:00Z' },
+  { name: 'Invited Talk 3 start', timeUTC: '2026-06-03T15:55:00Z' },
+  { name: 'Invited Talk 3 end', timeUTC: '2026-06-03T16:20:00Z' },
+  { name: 'Coffee Break start', timeUTC: '2026-06-03T16:20:00Z' },
+  { name: 'Coffee Break end', timeUTC: '2026-06-03T16:30:00Z' },
+  { name: 'Invited Talk 4 start', timeUTC: '2026-06-03T16:30:00Z' },
+  { name: 'Invited Talk 4 end', timeUTC: '2026-06-03T16:55:00Z' },
+  { name: 'Invited Talk 5 start', timeUTC: '2026-06-03T16:55:00Z' },
+  { name: 'Invited Talk 5 end', timeUTC: '2026-06-03T17:20:00Z' },
+  { name: 'Invited Talk 6 start', timeUTC: '2026-06-03T17:20:00Z' },
+  { name: 'Invited Talk 6 end', timeUTC: '2026-06-03T17:45:00Z' },
+  { name: 'Oral Talk 1 start', timeUTC: '2026-06-03T17:45:00Z' },
+  { name: 'Oral Talk 1 end', timeUTC: '2026-06-03T17:55:00Z' },
+  { name: 'Oral Talk 2 start', timeUTC: '2026-06-03T17:55:00Z' },
+  { name: 'Oral Talk 2 end', timeUTC: '2026-06-03T18:05:00Z' },
+  { name: 'Oral Talk 3 start', timeUTC: '2026-06-03T18:05:00Z' },
+  { name: 'Oral Talk 3 end', timeUTC: '2026-06-03T18:15:00Z' },
+  { name: 'Closing Remarks start', timeUTC: '2026-06-03T18:15:00Z' },
+  { name: 'Closing Remarks end', timeUTC: '2026-06-03T18:20:00Z' }
+];
+
+function updateSchedule() {
+  const timezoneSelect = document.getElementById('timezone');
+  if (!timezoneSelect) {
+    return;
+  }
+
+  const timezone = timezoneSelect.value;
+  const dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+
+  events.forEach((event, index) => {
+    const timeCell = document.getElementById(`time${index + 1}`);
+    if (!timeCell) {
+      return;
+    }
+
+    const eventDate = new Date(event.timeUTC);
+    timeCell.textContent = eventDate.toLocaleTimeString('en-US', {
+      timeZone: timezone,
+      ...dateOptions
+    });
+  });
+}
+
+updateSchedule();
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
